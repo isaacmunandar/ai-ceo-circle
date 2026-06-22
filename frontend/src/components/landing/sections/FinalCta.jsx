@@ -27,6 +27,40 @@ const FinalCta = () => {
 
   return (
     <section id="apply" className="relative z-10 overflow-hidden py-32 md:py-44">
+      {/* Atmospheric lava backdrop */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{ rotate: [0, 90, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-24 right-[5%] h-[640px] w-[640px] rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle at 40% 40%, rgba(201,146,10,0.22), rgba(138,102,8,0.10) 45%, transparent 72%)",
+            filter: "blur(140px)",
+          }}
+        />
+        <motion.div
+          animate={{ rotate: [0, -120, 0], scale: [1, 1.3, 1] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-[-10%] left-[-8%] h-[560px] w-[560px] rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle at 55% 55%, rgba(31,49,96,0.55), rgba(13,23,41,0.28) 48%, transparent 75%)",
+            filter: "blur(140px)",
+          }}
+        />
+        <motion.div
+          animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/2 left-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(214,58,10,0.28), transparent 70%)",
+            filter: "blur(80px)",
+          }}
+        />
+      </div>
+
       <Container>
         <Reveal>
           <SectionLabel>{FINAL_CTA.eyebrow}</SectionLabel>

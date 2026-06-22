@@ -11,11 +11,11 @@ const FixedGrid = () => (
     className="pointer-events-none fixed inset-0 z-[-1]"
     style={{
       backgroundImage:
-        "repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 8.3333%)",
+        "repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 8.3333%)",
       maskImage:
-        "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.95) 12%, rgba(0,0,0,0.95) 88%, transparent 100%)",
+        "linear-gradient(180deg, transparent 0%, rgba(0,0,0,1) 8%, rgba(0,0,0,1) 92%, transparent 100%)",
       WebkitMaskImage:
-        "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.95) 12%, rgba(0,0,0,0.95) 88%, transparent 100%)",
+        "linear-gradient(180deg, transparent 0%, rgba(0,0,0,1) 8%, rgba(0,0,0,1) 92%, transparent 100%)",
     }}
   />
 );

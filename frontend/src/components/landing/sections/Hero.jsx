@@ -10,6 +10,8 @@ import { HERO } from "@/components/landing/data";
 const Hero = () => {
   return (
     <section id="top" className="relative isolate overflow-hidden pt-6">
+      {/* Solid dark base — blocks body gradient from bleeding into hero */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[#070e1c]" />
       <LavaFlowBackdrop />
 
       {/* Top status pill */}

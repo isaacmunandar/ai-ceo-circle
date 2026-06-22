@@ -53,8 +53,8 @@ const Spotlight = ({
     return `rgba(${r}, ${g}, ${b}, ${a})`;
   };
 
-  const innerGradient = `radial-gradient(${radius}px circle at ${pos.x}px ${pos.y}px, ${hexToRgba(color, 0.22)}, transparent 55%)`;
-  const borderGradient = `radial-gradient(${Math.round(radius * 0.9)}px circle at ${pos.x}px ${pos.y}px, ${hexToRgba(color, 0.85)}, transparent 60%)`;
+  const innerGradient = `radial-gradient(${radius}px circle at ${pos.x}px ${pos.y}px, ${hexToRgba(color, 0.28)}, transparent 55%)`;
+  const borderGradient = `radial-gradient(${Math.round(radius * 0.9)}px circle at ${pos.x}px ${pos.y}px, ${hexToRgba(color, 1.0)}, transparent 60%)`;
 
   return (
     <Tag
@@ -70,7 +70,7 @@ const Spotlight = ({
       {innerGlow && (
         <div
           aria-hidden
-          className={`pointer-events-none absolute inset-0 ${rounded} transition-opacity duration-500`}
+          className={`pointer-events-none absolute inset-0 ${rounded} transition-opacity duration-300`}
           style={{
             opacity: hovering ? 1 : 0,
             background: innerGradient,
@@ -82,7 +82,7 @@ const Spotlight = ({
       {borderGlow && (
         <div
           aria-hidden
-          className={`pointer-events-none absolute inset-0 ${rounded} transition-opacity duration-500`}
+          className={`pointer-events-none absolute inset-0 ${rounded} transition-opacity duration-300`}
           style={{
             opacity: hovering ? 1 : 0.0,
             background: borderGradient,
