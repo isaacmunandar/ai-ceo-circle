@@ -2,84 +2,104 @@ import React from "react";
 import Container from "@/components/landing/ui/Container";
 import SectionLabel from "@/components/landing/ui/SectionLabel";
 import Reveal from "@/components/landing/ui/Reveal";
-import GlowCard from "@/components/landing/ui/GlowCard";
+import BigSerifMarquee from "@/components/landing/ui/BigSerifMarquee";
 import { ECOSYSTEM } from "@/components/landing/data";
-import { Sparkles, GraduationCap, Building2, Bot } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
-const icons = [GraduationCap, Building2, Bot];
-
+/**
+ * Ecosystem — magma editorial: big serif headline + supporting copy + numbered list (01/02/03)
+ */
 const Ecosystem = () => {
   return (
-    <section id="ecosystem" className="relative z-10 py-28 md:py-36">
-      <Container>
-        <div className="flex flex-col gap-6">
-          <SectionLabel>{ECOSYSTEM.label}</SectionLabel>
-          <Reveal>
-            <h2 className="max-w-3xl text-balance text-3xl font-medium leading-[1.08] tracking-tight text-white sm:text-4xl md:text-5xl">
-              {ECOSYSTEM.title.split("ecosystem").map((part, idx, arr) => (
-                <React.Fragment key={idx}>
-                  {part}
-                  {idx < arr.length - 1 && (
-                    <span className="font-serif-italic text-gradient-gold">ecosystem</span>
-                  )}
-                </React.Fragment>
+    <section id="ecosystem" className="relative z-10">
+      {/* Big serif marquee separating sections */}
+      <BigSerifMarquee
+        words={["Know-How", "Expertise", "Business Logic"]}
+        size="xl"
+        className="py-8"
+      />
+      <BigSerifMarquee
+        words={["Engineering", "Automation", "AI Agents"]}
+        size="xl"
+        reverse
+        className="py-4 opacity-80"
+      />
+
+      <Container className="pt-24 pb-28 md:pt-32 md:pb-36">
+        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
+          <div className="md:col-span-7">
+            <SectionLabel>About MAXY AI</SectionLabel>
+            <Reveal className="mt-6">
+              <h2 className="font-serif text-balance text-[12vw] leading-[0.95] tracking-[-0.035em] text-cream sm:text-[9vw] md:text-[6.8vw] lg:text-[5.8vw]">
+                Tailored <span className="font-serif-italic text-gradient-lava">AI Systems</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={0.08} className="mt-8">
+              <p className="max-w-xl text-[15.5px] leading-relaxed text-cream-soft">
+                {ECOSYSTEM.intro}
+              </p>
+              <a
+                href="#apply"
+                className="mt-7 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.28em] text-cream transition-colors hover:text-lava"
+              >
+                Encode your know-how
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </Reveal>
+          </div>
+
+          {/* Numbered editorial list */}
+          <div className="md:col-span-5">
+            <div className="flex flex-col">
+              {ECOSYSTEM.cards.map((c, i) => (
+                <Reveal key={i} delay={i * 0.08}>
+                  <div className="group relative border-t border-hair border-cream-10 py-8 last:border-b">
+                    <div className="flex items-baseline gap-5">
+                      <span className="font-serif text-4xl tracking-tight text-lava md:text-5xl">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div className="flex-1">
+                        <h3 className="font-serif text-[26px] leading-tight text-cream md:text-[30px]">
+                          {c.title.split(" ").slice(0, -1).join(" ")}
+                          {" "}
+                          <span className="font-serif-italic text-lava-soft">
+                            {c.title.split(" ").slice(-1)[0]}
+                          </span>
+                        </h3>
+                        <p className="mt-3 text-[14px] leading-relaxed text-cream-dim">{c.body}</p>
+                        <span className="mt-3 inline-block font-mono text-[10px] uppercase tracking-[0.28em] text-cream-dim">
+                          {c.tag}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
               ))}
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="max-w-2xl text-[15px] leading-relaxed text-white/60">
-              {ECOSYSTEM.intro}
-            </p>
-          </Reveal>
-        </div>
-
-        {/* 3 main cards */}
-        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border-hair border-white/10 bg-white/[0.02] md:grid-cols-3">
-          {ECOSYSTEM.cards.map((c, i) => {
-            const Icon = icons[i] || Sparkles;
-            return (
-              <Reveal key={i} delay={i * 0.08} className="h-full">
-                <GlowCard className="flex h-full flex-col rounded-none border-0 bg-transparent p-7 md:p-9" interactive>
-                  <div className="flex items-center justify-between">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border-hair border-white/10 bg-white/[0.03] text-gold">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/45">
-                      {c.tag}
-                    </span>
-                  </div>
-                  <h3 className="mt-8 text-[22px] font-medium tracking-tight text-white md:text-2xl">
-                    {c.title}
-                  </h3>
-                  <p className="mt-3 text-[14.5px] leading-relaxed text-white/60">{c.body}</p>
-                </GlowCard>
-              </Reveal>
-            );
-          })}
-        </div>
-
-        {/* Outro */}
-        <Reveal delay={0.15}>
-          <div className="mt-12 grid items-start gap-10 md:grid-cols-12">
-            <div className="md:col-span-7">
-              <p className="text-[15px] leading-relaxed text-white/65">{ECOSYSTEM.outro}</p>
-            </div>
-            <div className="md:col-span-5">
-              <div className="grid grid-cols-2 gap-3">
-                {ECOSYSTEM.pillars.map((p, i) => (
-                  <div
-                    key={i}
-                    className="rounded-xl border-hair border-white/10 bg-white/[0.02] p-4"
-                  >
-                    <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-gold">
-                      {p.tag}
-                    </div>
-                    <div className="mt-2 text-[13px] leading-relaxed text-white/75">{p.text}</div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
+        </div>
+
+        {/* Pillars row */}
+        <Reveal delay={0.15}>
+          <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden border border-hair border-cream-10 lg:grid-cols-4">
+            {ECOSYSTEM.pillars.map((p, i) => (
+              <div
+                key={i}
+                className="border-r border-b border-hair border-cream-10 bg-[rgba(12,20,40,0.25)] p-6"
+              >
+                <div className="font-mono text-[10px] uppercase tracking-[0.28em] text-lava">
+                  {p.tag}
+                </div>
+                <div className="mt-3 font-serif text-[18px] leading-snug text-cream">{p.text}</div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.2}>
+          <p className="mt-12 max-w-3xl text-[15px] leading-relaxed text-cream-soft">
+            {ECOSYSTEM.outro}
+          </p>
         </Reveal>
       </Container>
     </section>

@@ -1,16 +1,16 @@
 import React from "react";
 
-const Marquee = ({ items = [], speed = "normal", separator = "·" }) => {
+const Marquee = ({ items = [], speed = "normal", separator = "—" }) => {
   const cls = speed === "slow" ? "animate-marquee-slow" : "animate-marquee";
   const row = (
-    <div className={`flex shrink-0 items-center gap-10 pr-10 ${cls}`}>
+    <div className={`flex shrink-0 items-center gap-12 pr-12 ${cls}`}>
       {items.map((it, i) => (
         <span
           key={i}
-          className="flex shrink-0 items-center gap-10 font-mono text-[11px] uppercase tracking-[0.28em] text-white/55"
+          className="flex shrink-0 items-center gap-12 font-mono text-[10.5px] uppercase tracking-[0.32em] text-cream-dim"
         >
           <span>{it}</span>
-          <span className="text-[#d4a017]/60">{separator}</span>
+          <span className="text-lava">{separator}</span>
         </span>
       ))}
     </div>
@@ -21,9 +21,8 @@ const Marquee = ({ items = [], speed = "normal", separator = "·" }) => {
         {row}
         {row}
       </div>
-      {/* edge fades */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#050505] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#050505] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#070e1c] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#070e1c] to-transparent" />
     </div>
   );
 };

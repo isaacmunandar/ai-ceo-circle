@@ -2,13 +2,13 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 /**
- * GlowCard — bento card with mouse-tracking radial gradient + subtle lift on hover.
- * Renders a faint hairline border, slight glass background, and an interactive glow layer.
+ * GlowCard — magma editorial card with hairline border, faint navy glass,
+ * and a soft lava radial glow that follows the cursor.
  */
 const GlowCard = ({
   children,
   className = "",
-  glow = "rgba(212, 160, 23, 0.18)",
+  glow = "rgba(255, 93, 42, 0.20)",
   as: Tag = "div",
   interactive = true,
   ...rest
@@ -29,12 +29,11 @@ const GlowCard = ({
       onMouseMove={onMouseMove}
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
-      whileHover={interactive ? { y: -3 } : undefined}
+      whileHover={interactive ? { y: -2 } : undefined}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative overflow-hidden rounded-2xl border-hair border-white/10 bg-white/[0.02] backdrop-blur-md ${className}`}
+      className={`relative overflow-hidden rounded-2xl border-hair border-cream-10 bg-[rgba(12,20,40,0.4)] backdrop-blur-md ${className}`}
       {...rest}
     >
-      {/* Mouse-tracking gold glow */}
       {interactive && (
         <div
           className="pointer-events-none absolute inset-0 transition-opacity duration-300"
@@ -44,9 +43,7 @@ const GlowCard = ({
           }}
         />
       )}
-      {/* Subtle top gloss */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-      {/* Content */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/15 to-transparent" />
       <div className="relative z-10">{children}</div>
     </motion.div>
   );

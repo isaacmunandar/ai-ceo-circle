@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/landing/sections/Navbar";
 import Hero from "@/components/landing/sections/Hero";
+import BuiltOnConvictions from "@/components/landing/sections/BuiltOnConvictions";
 import PoweredBy from "@/components/landing/sections/PoweredBy";
 import Ecosystem from "@/components/landing/sections/Ecosystem";
 import Problem from "@/components/landing/sections/Problem";
@@ -20,6 +21,7 @@ const LandingPage = () => {
       <Navbar />
       <Hero />
       <PoweredBy />
+      <BuiltOnConvictions />
       <Ecosystem />
       <Problem />
       <Program />

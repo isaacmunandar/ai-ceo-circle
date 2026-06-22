@@ -2,43 +2,54 @@ import React from "react";
 import Container from "@/components/landing/ui/Container";
 import SectionLabel from "@/components/landing/ui/SectionLabel";
 import Reveal from "@/components/landing/ui/Reveal";
-import GlowCard from "@/components/landing/ui/GlowCard";
 import { PROBLEM } from "@/components/landing/data";
 
 const Problem = () => {
   return (
     <section id="problem" className="relative z-10 py-24 md:py-32">
       <Container>
-        <div className="grid items-end gap-8 md:grid-cols-12">
+        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
             <SectionLabel>{PROBLEM.label}</SectionLabel>
-            <Reveal className="mt-5">
-              <h2 className="text-balance text-3xl font-medium leading-[1.08] tracking-tight text-white sm:text-4xl md:text-5xl">
-                The real AI problem isn't technology.{" "}
-                <span className="font-serif-italic text-gradient-gold">It's leadership.</span>
+            <Reveal className="mt-6">
+              <h2 className="font-serif text-balance text-[10vw] leading-[0.95] tracking-[-0.035em] text-cream sm:text-[8vw] md:text-[5.8vw] lg:text-[5vw]">
+                The real AI problem isn’t technology.{" "}
+                <span className="font-serif-italic text-gradient-lava">It’s leadership.</span>
               </h2>
             </Reveal>
           </div>
-          <Reveal delay={0.1} className="md:col-span-5">
-            <p className="text-[15px] leading-relaxed text-white/60">{PROBLEM.intro}</p>
+          <Reveal delay={0.1} className="md:col-span-5 md:pt-10">
+            <p className="text-[15.5px] leading-relaxed text-cream-soft">{PROBLEM.intro}</p>
           </Reveal>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden border border-hair border-cream-10 md:grid-cols-2">
           {PROBLEM.items.map((it, i) => (
             <Reveal key={i} delay={i * 0.07}>
-              <GlowCard className="p-7 md:p-8">
-                <div className="flex items-baseline justify-between">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.28em] text-gold">
+              <div className="relative h-full border-r border-b border-hair border-cream-10 bg-[rgba(12,20,40,0.25)] p-8 md:p-10">
+                <div className="flex items-start gap-6">
+                  <span className="font-serif text-[44px] leading-none tracking-tight text-lava md:text-[56px]">
                     {it.n}
                   </span>
-                  <span className="h-px w-12 bg-gradient-to-r from-[#d4a017]/60 to-transparent" />
+                  <div className="flex-1">
+                    <h3 className="font-serif text-[24px] leading-tight text-cream md:text-[28px]">
+                      {it.title.split(".").map((s, j, arr) => (
+                        <React.Fragment key={j}>
+                          {j === arr.length - 1 || arr[j].trim() === "" ? (
+                            s
+                          ) : (
+                            <span className={j === 0 ? "" : "font-serif-italic text-lava-soft"}>
+                              {s}
+                              {j < arr.length - 1 ? "." : ""}
+                            </span>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </h3>
+                    <p className="mt-4 text-[14px] leading-relaxed text-cream-dim">{it.body}</p>
+                  </div>
                 </div>
-                <h3 className="mt-6 text-[19px] font-medium leading-snug tracking-tight text-white md:text-[21px]">
-                  {it.title}
-                </h3>
-                <p className="mt-3 text-[14.5px] leading-relaxed text-white/60">{it.body}</p>
-              </GlowCard>
+              </div>
             </Reveal>
           ))}
         </div>

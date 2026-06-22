@@ -2,51 +2,59 @@ import React from "react";
 import Container from "@/components/landing/ui/Container";
 import SectionLabel from "@/components/landing/ui/SectionLabel";
 import Reveal from "@/components/landing/ui/Reveal";
-import GlowCard from "@/components/landing/ui/GlowCard";
-import { Users, Bot, Briefcase } from "lucide-react";
+import BigSerifMarquee from "@/components/landing/ui/BigSerifMarquee";
 import { AFTERMATH } from "@/components/landing/data";
-
-const icons = [Users, Bot, Briefcase];
 
 const Aftermath = () => {
   return (
-    <section id="after" className="relative z-10 py-24 md:py-32">
-      <Container>
-        <div className="flex flex-col gap-5">
-          <SectionLabel>{AFTERMATH.label}</SectionLabel>
-          <Reveal>
-            <h2 className="max-w-3xl text-balance text-3xl font-medium leading-[1.08] tracking-tight text-white sm:text-4xl md:text-5xl">
-              AI CEO Circle is the{" "}
-              <span className="font-serif-italic text-gradient-gold">beginning</span>, not the end
-            </h2>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <p className="max-w-2xl text-[15px] leading-relaxed text-white/60">{AFTERMATH.intro}</p>
+    <section id="after" className="relative z-10">
+      <BigSerifMarquee
+        words={["Train", "Transform", "Place Talent"]}
+        size="xl"
+        reverse
+        className="py-6 opacity-80"
+      />
+      <Container className="pt-20 pb-24 md:pt-24 md:pb-32">
+        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
+          <div className="md:col-span-7">
+            <SectionLabel>{AFTERMATH.label}</SectionLabel>
+            <Reveal className="mt-6">
+              <h2 className="font-serif text-balance text-[10vw] leading-[0.95] tracking-[-0.035em] text-cream sm:text-[8vw] md:text-[5.8vw] lg:text-[5vw]">
+                The beginning,{" "}
+                <span className="font-serif-italic text-gradient-lava">not the end</span>
+              </h2>
+            </Reveal>
+          </div>
+          <Reveal delay={0.1} className="md:col-span-5 md:pt-10">
+            <p className="text-[15.5px] leading-relaxed text-cream-soft">{AFTERMATH.intro}</p>
           </Reveal>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-3">
-          {AFTERMATH.steps.map((s, i) => {
-            const Icon = icons[i];
-            return (
-              <Reveal key={i} delay={i * 0.08}>
-                <GlowCard className="flex h-full flex-col p-7 md:p-8">
-                  <div className="flex items-center justify-between">
-                    <div className="grid h-11 w-11 place-items-center rounded-xl border-hair border-white/10 bg-white/[0.03] text-gold">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <span className="font-mono text-[10.5px] uppercase tracking-[0.24em] text-white/45">
+        <div className="mt-14 flex flex-col">
+          {AFTERMATH.steps.map((s, i) => (
+            <Reveal key={i} delay={i * 0.06}>
+              <div className="group relative border-t border-hair border-cream-10 py-9 last:border-b md:py-11">
+                <div className="grid grid-cols-1 items-baseline gap-6 md:grid-cols-12 md:gap-10">
+                  <div className="md:col-span-2">
+                    <span className="font-mono text-[10.5px] uppercase tracking-[0.32em] text-lava">
                       {s.tag}
                     </span>
                   </div>
-                  <h3 className="mt-7 text-[20px] font-medium tracking-tight text-white md:text-[22px]">
-                    {s.title}
-                  </h3>
-                  <p className="mt-3 text-[14.5px] leading-relaxed text-white/60">{s.body}</p>
-                </GlowCard>
-              </Reveal>
-            );
-          })}
+                  <div className="md:col-span-5">
+                    <h3 className="font-serif text-[28px] leading-[1.06] text-cream md:text-[34px]">
+                      {s.title.split(" ").slice(0, -1).join(" ")}{" "}
+                      <span className="font-serif-italic text-lava-soft">
+                        {s.title.split(" ").slice(-1)[0]}
+                      </span>
+                    </h3>
+                  </div>
+                  <div className="md:col-span-5">
+                    <p className="text-[14.5px] leading-relaxed text-cream-soft">{s.body}</p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </Container>
     </section>
