@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 import SectionLabel from "@/components/landing/ui/SectionLabel";
 import Reveal from "@/components/landing/ui/Reveal";
 import Spotlight from "@/components/landing/ui/Spotlight";
+import Tilt from "@/components/landing/ui/Tilt";
 import { ArrowUpRight } from "lucide-react";
 
 const BuiltOnConvictions = () => {
@@ -45,7 +48,7 @@ const BuiltOnConvictions = () => {
           <div className="md:col-span-5 md:pt-10">
             <Reveal delay={0.1}>
               <p className="text-[16px] leading-relaxed text-cream-soft">
-                Increase your speed-to-decision and eliminate manual debt by transforming a CEO’s business judgment into proprietary AI systems — owned, encoded, and scaled inside your company.
+                Increase your speed-to-decision and eliminate manual debt by transforming a CEO's business judgment into proprietary AI systems — owned, encoded, and scaled inside your company.
               </p>
               <a
                 href="#program"
@@ -61,38 +64,45 @@ const BuiltOnConvictions = () => {
         <div className="mt-20 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {convictions.map((c, i) => (
             <Reveal key={i} delay={i * 0.08}>
-              <Spotlight
-                className="h-full border border-hair border-white/[0.06] bg-[rgba(8,14,28,0.55)] backdrop-blur-md"
-                lift={4}
-                radius={460}
-              >
-                <div className="relative h-full overflow-hidden rounded-2xl p-7 md:p-9">
-                  <div className="flex items-baseline justify-between">
-                    <span className="font-serif text-[36px] leading-none text-[#C9920A] md:text-[42px]" style={{ letterSpacing: "-0.04em" }}>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
-                      Conviction
-                    </span>
-                  </div>
+              <Tilt className="h-full rounded-2xl" max={6} scale={1.025}>
+                <Spotlight
+                  className="h-full border border-hair border-white/[0.06] bg-[rgba(8,14,28,0.55)] backdrop-blur-md"
+                  lift={0}
+                  radius={400}
+                >
+                  <div className="relative h-full overflow-hidden rounded-2xl p-7 md:p-9">
+                    <div className="flex items-baseline justify-between">
+                      <motion.span
+                        whileHover={{ scale: 1.1, color: "#ff7a3d" }}
+                        transition={{ duration: 0.4 }}
+                        className="font-serif text-[36px] leading-none text-[#C9920A] md:text-[42px]"
+                        style={{ letterSpacing: "-0.04em", display: "inline-block" }}
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </motion.span>
+                      <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
+                        Conviction
+                      </span>
+                    </div>
 
-                  <h3
-                    className="mt-10 font-serif text-[26px] leading-[1.02] text-cream md:text-[32px]"
-                    style={{ letterSpacing: "-0.035em" }}
-                  >
-                    {c.title.split(" ").map((w, j, arr) => (
-                      <React.Fragment key={j}>
-                        {j === arr.length - 1 ? (
-                          <span className="font-serif-italic text-lava-soft"> {w}</span>
-                        ) : (
-                          <>{j > 0 ? " " : ""}{w}</>
-                        )}
-                      </React.Fragment>
-                    ))}
-                  </h3>
-                  <p className="mt-5 text-[14px] leading-relaxed text-cream-dim">{c.body}</p>
-                </div>
-              </Spotlight>
+                    <h3
+                      className="mt-10 font-serif text-[26px] leading-[1.02] text-cream md:text-[32px]"
+                      style={{ letterSpacing: "-0.035em" }}
+                    >
+                      {c.title.split(" ").map((w, j, arr) => (
+                        <React.Fragment key={j}>
+                          {j === arr.length - 1 ? (
+                            <span className="font-serif-italic text-lava-soft"> {w}</span>
+                          ) : (
+                            <>{j > 0 ? " " : ""}{w}</>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </h3>
+                    <p className="mt-5 text-[14px] leading-relaxed text-cream-dim">{c.body}</p>
+                  </div>
+                </Spotlight>
+              </Tilt>
             </Reveal>
           ))}
         </div>

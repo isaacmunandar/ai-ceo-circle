@@ -68,7 +68,7 @@ const Tilt = ({
       className={`relative ${className}`}
       {...rest}
     >
-      <div style={{ transform: "translateZ(20px)", transformStyle: "preserve-3d" }}>
+      <div className="h-full" style={{ transform: "translateZ(20px)", transformStyle: "preserve-3d" }}>
         {children}
       </div>
 

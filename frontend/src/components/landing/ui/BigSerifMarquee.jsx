@@ -1,23 +1,84 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useEffect } from "react";
+import {
+  motion,
+  useScroll,
+  useVelocity,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useAnimationFrame,
+} from "framer-motion";
 
 /**
- * BigSerifMarquee — massive italic serif marquee that speeds-up on hover and
- * scales the active word.  Pure CSS animation is paused/resumed via hover.
+ * Scroll-velocity driven marquee — base speed + accelerates on scroll.
+ * Uses framer-motion useAnimationFrame instead of CSS animation so scroll
+ * velocity can be injected directly into the translation.
  */
+const ScrollMarqueeRow = ({ words, separator, fontCls, reverse = false, baseSpeed = 130 }) => {
+  const rowRef = useRef(null);
+  const x = useMotionValue(0);
+
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
+  const velocityFactor = useTransform(smoothVelocity, [-3000, 3000], [-3, 3], { clamp: false });
+
+  useEffect(() => {
+    if (reverse && rowRef.current) {
+      x.set(-rowRef.current.offsetWidth);
+    }
+  }, [reverse, x]);
+
+  useAnimationFrame((_, delta) => {
+    const rowWidth = rowRef.current?.offsetWidth;
+    if (!rowWidth) return;
+
+    // boost: 1× at rest → up to ~4× on fast scroll
+    const boost = Math.abs(velocityFactor.get()) * 0.8 + 1;
+    const px = baseSpeed * boost * (delta / 1000);
+
+    let newX = reverse ? x.get() + px : x.get() - px;
+    if (!reverse && newX <= -rowWidth) newX += rowWidth;
+    if (reverse && newX >= 0) newX -= rowWidth;
+
+    x.set(newX);
+  });
+
+  const wordItems = words.map((w, i) => (
+    <span key={i} className="flex shrink-0 items-center gap-12">
+      <motion.span
+        whileHover={{ scale: 1.08, color: "#ffae7a" }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className={`font-serif-italic whitespace-nowrap ${fontCls} leading-[0.9] text-cream transition-colors cursor-default`}
+      >
+        {w}
+      </motion.span>
+      <span className="font-serif-italic text-[#ff5d2a]/70 text-6xl md:text-7xl lg:text-8xl">
+        {separator}
+      </span>
+    </span>
+  ));
+
+  return (
+    <motion.div className="flex" style={{ x }}>
+      <div ref={rowRef} className="flex shrink-0 items-center gap-12 pr-12">
+        {wordItems}
+      </div>
+      <div className="flex shrink-0 items-center gap-12 pr-12" aria-hidden>
+        {wordItems}
+      </div>
+    </motion.div>
+  );
+};
+
 const BigSerifMarquee = ({
   words = [],
   separator = "—",
-  speed = "normal",
   size = "normal",
   reverse = false,
   className = "",
+  baseSpeed = 130,
 }) => {
-  const cls = [
-    speed === "slow" ? "animate-marquee-slow" : speed === "fast" ? "animate-marquee" : "animate-marquee-slow",
-    reverse ? "animate-marquee-reverse" : "",
-  ].join(" ");
-
   const fontCls =
     size === "xxl"
       ? "text-[18vw] sm:text-[14vw] md:text-[11vw] lg:text-[9.5vw]"
@@ -25,31 +86,15 @@ const BigSerifMarquee = ({
       ? "text-[14vw] sm:text-[11vw] md:text-[9vw] lg:text-[7.5vw]"
       : "text-[10vw] sm:text-[8vw] md:text-[6.5vw] lg:text-[5vw]";
 
-  const row = (
-    <div className={`group/marquee flex shrink-0 items-center gap-12 pr-12 ${cls} hover:[animation-play-state:paused]`}>
-      {words.map((w, i) => (
-        <span key={i} className="flex shrink-0 items-center gap-12">
-          <motion.span
-            whileHover={{ scale: 1.08, color: "#ffae7a" }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className={`font-serif-italic whitespace-nowrap ${fontCls} leading-[0.9] text-cream transition-colors cursor-default`}
-          >
-            {w}
-          </motion.span>
-          <span className="font-serif-italic text-[#ff5d2a]/70 text-6xl md:text-7xl lg:text-8xl">
-            {separator}
-          </span>
-        </span>
-      ))}
-    </div>
-  );
-
   return (
     <div className={`relative w-full overflow-hidden ${className}`}>
-      <div className="flex w-max">
-        {row}
-        {row}
-      </div>
+      <ScrollMarqueeRow
+        words={words}
+        separator={separator}
+        fontCls={fontCls}
+        reverse={reverse}
+        baseSpeed={baseSpeed}
+      />
       <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#070e1c] to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#070e1c] to-transparent" />
     </div>

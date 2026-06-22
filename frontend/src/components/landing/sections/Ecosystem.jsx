@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 import SectionLabel from "@/components/landing/ui/SectionLabel";
 import Reveal from "@/components/landing/ui/Reveal";
@@ -46,15 +48,35 @@ const Ecosystem = () => {
             <div className="flex flex-col">
               {ECOSYSTEM.cards.map((c, i) => (
                 <Reveal key={i} delay={i * 0.1}>
-                  <div className="group relative border-t border-hair border-cream-10 py-9 last:border-b">
-                    <div className="flex items-baseline gap-6">
-                      <span
+                  <motion.div
+                    whileHover="hover"
+                    initial="rest"
+                    animate="rest"
+                    className="group relative cursor-default overflow-hidden border-t border-hair border-cream-10 py-9 last:border-b"
+                  >
+                    {/* Bottom lava line */}
+                    <motion.span
+                      aria-hidden
+                      variants={{ rest: { scaleX: 0 }, hover: { scaleX: 1 } }}
+                      transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                      style={{ originX: 0 }}
+                      className="pointer-events-none absolute inset-x-0 -bottom-[0.5px] h-px bg-gradient-to-r from-[#C9920A] via-[#ff7a3d] to-transparent"
+                    />
+
+                    <div className="relative z-10 flex items-baseline gap-6">
+                      <motion.span
+                        variants={{ rest: { scale: 1, x: 0 }, hover: { scale: 1.1, x: 4 } }}
+                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                         className="font-serif text-4xl text-[#C9920A] md:text-5xl"
-                        style={{ letterSpacing: "-0.04em" }}
+                        style={{ letterSpacing: "-0.04em", transformOrigin: "left center", display: "inline-block" }}
                       >
                         {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <div className="flex-1">
+                      </motion.span>
+                      <motion.div
+                        variants={{ rest: { x: 0 }, hover: { x: 8 } }}
+                        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                        className="flex-1"
+                      >
                         <h3
                           className="font-serif text-[26px] leading-[1.05] text-cream md:text-[32px]"
                           style={{ letterSpacing: "-0.035em" }}
@@ -68,9 +90,9 @@ const Ecosystem = () => {
                         <span className="mt-3 inline-block font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
                           {c.tag}
                         </span>
-                      </div>
+                      </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                 </Reveal>
               ))}
             </div>
@@ -85,6 +107,7 @@ const Ecosystem = () => {
                 key={i}
                 className="border border-hair border-white/[0.06] bg-[rgba(8,14,28,0.4)] backdrop-blur-md"
                 radius={300}
+                lift={4}
               >
                 <div className="rounded-2xl p-6">
                   <div className="font-mono text-[10px] uppercase tracking-[0.38em] text-[#C9920A]">

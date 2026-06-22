@@ -47,29 +47,27 @@ const AnimatedWord = ({ word, italic, gradient }) => {
         }
       : {};
 
+  // clipPath instead of overflow:hidden — creates the same word-level curtain clip
+  // without affecting background-clip:text on the parent (overflow:hidden would break it).
+  // Bottom extension of 0.4em gives room for italic descenders (j, g, y…).
   return (
     <span
       className={italic ? "font-serif-italic" : ""}
-      style={{ display: "inline-flex", verticalAlign: "baseline", ...gradientStyle }}
+      style={{
+        display: "inline-flex",
+        verticalAlign: "baseline",
+        clipPath: "inset(0 -0.05em -0.4em -0.05em)",
+        ...gradientStyle,
+      }}
     >
       {letters.map((ch, i) => (
-        <span
+        <motion.span
           key={i}
-          style={{
-            display: "inline-block",
-            overflow: "hidden",
-            verticalAlign: "top",
-            paddingBottom: "0.22em",
-            marginBottom: "-0.22em",
-          }}
+          variants={child}
+          style={{ display: "inline-block", transformOrigin: "bottom" }}
         >
-          <motion.span
-            variants={child}
-            style={{ display: "inline-block", transformOrigin: "bottom" }}
-          >
-            {ch}
-          </motion.span>
-        </span>
+          {ch}
+        </motion.span>
       ))}
     </span>
   );

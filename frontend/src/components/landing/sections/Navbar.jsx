@@ -1,9 +1,23 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
 import MagneticButton from "@/components/landing/ui/MagneticButton";
 import { NAV_LINKS, META } from "@/components/landing/data";
+
+const NavLink = ({ href, label }) => (
+  <a
+    href={href}
+    className="group relative text-[13px] tracking-tight text-cream-soft transition-colors duration-300 hover:text-cream"
+  >
+    {label}
+    <span
+      className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-[#C9920A] transition-transform group-hover:scale-x-100"
+      style={{ transitionDuration: "0.45s", transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
+    />
+  </a>
+);
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -26,31 +40,26 @@ const Navbar = () => {
       }`}
     >
       <Container className="flex h-20 items-center justify-between md:h-24">
-        {/* Logo — magma-style serif wordmark */}
+        {/* Logo */}
         <a href="#top" className="group flex items-baseline gap-1">
           <span className="font-serif text-[26px] leading-none tracking-tight text-cream md:text-[30px]">
             AI CEO Circle
           </span>
-          <span className="font-serif-italic text-lava text-[18px] md:text-[20px]">.</span>
+          <motion.span
+            whileHover={{ scale: 1.3, color: "#ff7a3d" }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+            className="font-serif-italic text-lava text-[18px] md:text-[20px]"
+            style={{ display: "inline-block" }}
+          >
+            .
+          </motion.span>
         </a>
 
         {/* Desktop links */}
         <div className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-[13px] tracking-tight text-cream-soft transition-colors hover:text-cream"
-            >
-              {l.label}
-            </a>
+            <NavLink key={l.href} href={l.href} label={l.label} />
           ))}
-          <a
-            href="#apply"
-            className="text-[13px] tracking-tight text-cream transition-colors hover:text-lava"
-          >
-            Contact us
-          </a>
         </div>
 
         <div className="hidden md:block">
@@ -60,14 +69,25 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button
+        <motion.button
           type="button"
           aria-label="Toggle menu"
           onClick={() => setOpen((o) => !o)}
+          whileTap={{ scale: 0.92 }}
           className="grid h-10 w-10 place-items-center rounded-full border-hair border-cream-15 text-cream md:hidden"
         >
-          {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-        </button>
+          <AnimatePresence mode="wait" initial={false}>
+            {open ? (
+              <motion.span key="x" initial={{ rotate: -45, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 45, opacity: 0 }} transition={{ duration: 0.2 }}>
+                <X className="h-4 w-4" />
+              </motion.span>
+            ) : (
+              <motion.span key="menu" initial={{ rotate: 45, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -45, opacity: 0 }} transition={{ duration: 0.2 }}>
+                <Menu className="h-4 w-4" />
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </motion.button>
       </Container>
 
       <AnimatePresence>
@@ -80,15 +100,18 @@ const Navbar = () => {
             className="overflow-hidden border-t border-hair border-cream-10 bg-[#070e1c]/95 backdrop-blur-xl md:hidden"
           >
             <Container className="flex flex-col gap-1 py-4">
-              {NAV_LINKS.map((l) => (
-                <a
+              {NAV_LINKS.map((l, i) => (
+                <motion.a
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.35, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
                   className="rounded-lg px-3 py-3 text-sm text-cream-soft transition-colors hover:bg-cream/[0.04] hover:text-cream"
                 >
                   {l.label}
-                </a>
+                </motion.a>
               ))}
               <div className="pt-2">
                 <MagneticButton href="#apply" icon={ArrowUpRight}>

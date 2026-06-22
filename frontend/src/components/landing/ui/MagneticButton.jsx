@@ -41,6 +41,7 @@ const MagneticButton = ({
       onMouseMove={onMouseMove}
       onMouseLeave={reset}
       animate={{ x: offset.x, y: offset.y }}
+      whileTap={{ scale: 0.97, y: 1 }}
       transition={{ type: "spring", stiffness: 220, damping: 18 }}
       className="inline-block"
     >

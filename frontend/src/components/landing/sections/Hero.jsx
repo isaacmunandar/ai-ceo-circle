@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
@@ -5,12 +6,12 @@ import Container from "@/components/landing/ui/Container";
 import MagneticButton from "@/components/landing/ui/MagneticButton";
 import LavaFlowBackdrop from "@/components/landing/ui/LavaFlowBackdrop";
 import AnimatedHeading from "@/components/landing/ui/AnimatedHeading";
-import { HERO } from "@/components/landing/data";
+import { HERO, STATS_HERO } from "@/components/landing/data";
 
 const Hero = () => {
   return (
-    <section id="top" className="relative isolate overflow-hidden pt-6">
-      {/* Solid dark base — blocks body gradient from bleeding into hero */}
+    <section id="top" className="relative isolate overflow-hidden pt-6 pb-24 md:pb-36">
+      {/* Solid dark base */}
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[#070e1c]" />
       <LavaFlowBackdrop />
 
@@ -32,7 +33,7 @@ const Hero = () => {
         </motion.div>
       </Container>
 
-      {/* Massive bleeding headline with letter-stagger reveal */}
+      {/* Massive bleeding headline */}
       <Container className="relative z-10 mt-10 md:mt-14">
         <AnimatedHeading
           as="h1"
@@ -73,8 +74,7 @@ const Hero = () => {
             >
               <ArrowRight className="h-3.5 w-3.5 rotate-90 group-hover:text-[#C9920A]" />
             </motion.span>
-            Scroll to dig
-            <span className="font-serif-italic text-base text-cream/60">— 1</span>
+            See the framework
           </motion.a>
 
           <motion.div
@@ -112,15 +112,31 @@ const Hero = () => {
         </div>
       </Container>
 
-      <Container className="relative z-10 mt-24 md:mt-28">
+      {/* Animated stats */}
+      <Container className="relative z-10 mt-20 md:mt-24">
         <div className="hairline" />
-        <div className="mt-5 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
-          <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
-            Indonesia — Singapore — Global Standard
-          </span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
-            Cohort 01 / September 2026 / 15 Seats
-          </span>
+        <div className="mt-8 grid grid-cols-3 gap-6 sm:grid-cols-5">
+          {STATS_HERO.map((s, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.9 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="group flex flex-col"
+            >
+              <motion.span
+                whileHover={{ color: "#ff7a3d" }}
+                transition={{ duration: 0.3 }}
+                className="font-serif text-[38px] leading-none text-cream sm:text-[44px]"
+                style={{ letterSpacing: "-0.04em" }}
+              >
+                {s.value}
+              </motion.span>
+              <span className="mt-1.5 font-mono text-[9px] uppercase leading-tight tracking-[0.32em] text-cream-dim">
+                {s.label}
+              </span>
+            </motion.div>
+          ))}
         </div>
       </Container>
     </section>

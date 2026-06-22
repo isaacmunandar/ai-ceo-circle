@@ -85,13 +85,13 @@ const FinalCta = () => {
             {!submitted ? (
               <form onSubmit={onSubmit} className="grid grid-cols-1 gap-x-12 gap-y-10 border-t border-hair border-cream-10 pt-12 md:grid-cols-2 md:pt-16">
                 <Field label="First name" required>
-                  <input required value={form.first} onChange={onChange("first")} placeholder="Jane" className="input" />
+                  <input required value={form.first} onChange={onChange("first")} placeholder="Budi" className="input" />
                 </Field>
                 <Field label="Last name" required>
-                  <input required value={form.last} onChange={onChange("last")} placeholder="Doe" className="input" />
+                  <input required value={form.last} onChange={onChange("last")} placeholder="Santoso" className="input" />
                 </Field>
                 <Field label="Email" required>
-                  <input required type="email" value={form.email} onChange={onChange("email")} placeholder="jane@company.com" className="input" />
+                  <input required type="email" value={form.email} onChange={onChange("email")} placeholder="budi@perusahaan.com" className="input" />
                 </Field>
                 <Field label="Company" required>
                   <input required value={form.company} onChange={onChange("company")} placeholder="Company name" className="input" />

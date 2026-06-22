@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 import SectionLabel from "@/components/landing/ui/SectionLabel";
 import Reveal from "@/components/landing/ui/Reveal";
 import Spotlight from "@/components/landing/ui/Spotlight";
+import Tilt from "@/components/landing/ui/Tilt";
 import { TESTIMONIALS } from "@/components/landing/data";
 
 const Testimonials = () => {
@@ -32,36 +34,45 @@ const Testimonials = () => {
         <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-3">
           {TESTIMONIALS.items.map((t, i) => (
             <Reveal key={i} delay={i * 0.1}>
-              <Spotlight
-                className="h-full border border-hair border-white/[0.06] bg-[rgba(8,14,28,0.55)] backdrop-blur-md"
-                lift={3}
-                radius={420}
-              >
-                <div className="relative flex h-full flex-col overflow-hidden rounded-2xl p-8 md:p-10">
-                  <span className="font-serif-italic text-[88px] leading-none text-[#C9920A]/40">“</span>
-                  <p
-                    className="-mt-8 font-serif text-[20px] leading-[1.32] text-cream md:text-[23px]"
-                    style={{ letterSpacing: "-0.02em" }}
-                  >
-                    {t.quote}
-                  </p>
-                  <div className="mt-8 flex items-center gap-3 border-t border-hair border-cream-10 pt-5">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: -8 }}
-                      transition={{ type: "spring", stiffness: 250, damping: 18 }}
-                      className="grid h-10 w-10 place-items-center rounded-full border-hair border-cream-15 bg-[rgba(201,146,10,0.08)] font-mono text-[11px] tracking-wider text-[#C9920A]"
+              <Tilt className="h-full rounded-2xl" max={5} scale={1.02}>
+                <Spotlight
+                  className="h-full border border-hair border-white/[0.06] bg-[rgba(8,14,28,0.55)] backdrop-blur-md"
+                  lift={0}
+                  radius={420}
+                >
+                  <div className="relative flex h-full flex-col overflow-hidden rounded-2xl p-8 md:p-10">
+                    <motion.span
+                      whileHover={{ scale: 1.05, color: "rgba(201,146,10,0.65)" }}
+                      transition={{ duration: 0.5 }}
+                      className="font-serif-italic text-[88px] leading-none text-[#C9920A]/40"
+                      style={{ display: "inline-block" }}
                     >
-                      {t.initials}
-                    </motion.div>
-                    <div className="flex flex-col">
-                      <span className="text-[13.5px] font-medium text-cream">{t.name}</span>
-                      <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
-                        {t.role}
-                      </span>
+                      "
+                    </motion.span>
+                    <p
+                      className="-mt-8 font-serif text-[20px] leading-[1.32] text-cream md:text-[23px]"
+                      style={{ letterSpacing: "-0.02em" }}
+                    >
+                      {t.quote}
+                    </p>
+                    <div className="mt-auto flex items-center gap-3 border-t border-hair border-cream-10 pt-6">
+                      <motion.div
+                        whileHover={{ scale: 1.12, rotate: -8 }}
+                        transition={{ type: "spring", stiffness: 280, damping: 18 }}
+                        className="grid h-10 w-10 place-items-center rounded-full border-hair border-cream-15 bg-[rgba(201,146,10,0.08)] font-mono text-[11px] tracking-wider text-[#C9920A]"
+                      >
+                        {t.initials}
+                      </motion.div>
+                      <div className="flex flex-col">
+                        <span className="text-[13.5px] font-medium text-cream">{t.name}</span>
+                        <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim">
+                          {t.role}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Spotlight>
+                </Spotlight>
+              </Tilt>
             </Reveal>
           ))}
         </div>

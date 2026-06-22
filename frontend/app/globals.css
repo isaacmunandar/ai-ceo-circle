@@ -189,9 +189,9 @@ code { font-family: var(--font-jetbrains-mono), monospace; }
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.animate-marquee { animation: marquee 38s linear infinite; }
-.animate-marquee-slow { animation: marquee 80s linear infinite; }
-.animate-marquee-reverse { animation: marquee 60s linear infinite reverse; }
+.animate-marquee { animation: marquee 18s linear infinite; }
+.animate-marquee-slow { animation: marquee 40s linear infinite; }
+.animate-marquee-reverse { animation: marquee 30s linear infinite reverse; }
 
 /* Lava pulse for accents */
 @keyframes lavaPulse {
