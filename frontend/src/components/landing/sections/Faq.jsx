@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
-import SectionLabel from "@/components/landing/ui/SectionLabel";
+
 import Reveal from "@/components/landing/ui/Reveal";
 import { FAQ } from "@/components/landing/data";
 
@@ -65,7 +65,6 @@ const Faq = () => {
       <Container>
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
-            <SectionLabel>{FAQ.label}</SectionLabel>
             <Reveal className="mt-7">
               <h2
                 className="font-serif text-balance text-[10vw] leading-[0.92] text-cream sm:text-[8vw] md:text-[6.4vw] lg:text-[5.6vw]"
@@ -80,7 +79,7 @@ const Faq = () => {
               Can’t find your answer? Reach us at{" "}
               <a
                 href="#apply"
-                className="text-cream underline decoration-cream/30 underline-offset-[4px] hover:text-[#C9920A] hover:decoration-[#C9920A]"
+                className="inline-flex min-h-[44px] items-center text-cream underline decoration-cream/30 underline-offset-[4px] hover:text-[#C9920A] hover:decoration-[#C9920A]"
               >
                 hello@aiceocircle.com
               </a>

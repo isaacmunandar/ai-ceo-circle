@@ -74,7 +74,7 @@ const Navbar = () => {
           aria-label="Toggle menu"
           onClick={() => setOpen((o) => !o)}
           whileTap={{ scale: 0.92 }}
-          className="grid h-10 w-10 place-items-center rounded-full border-hair border-cream-15 text-cream md:hidden"
+          className="grid h-11 w-11 place-items-center rounded-full border-hair border-cream-15 text-cream md:hidden"
         >
           <AnimatePresence mode="wait" initial={false}>
             {open ? (

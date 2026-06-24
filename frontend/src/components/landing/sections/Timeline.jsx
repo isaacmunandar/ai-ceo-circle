@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
-import SectionLabel from "@/components/landing/ui/SectionLabel";
+
 import Reveal from "@/components/landing/ui/Reveal";
 import BigSerifMarquee from "@/components/landing/ui/BigSerifMarquee";
 import { TIMELINE } from "@/components/landing/data";
@@ -19,7 +19,6 @@ const Timeline = () => {
       <Container className="pt-24 pb-28 md:pt-28 md:pb-40">
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
-            <SectionLabel>{TIMELINE.label}</SectionLabel>
             <Reveal className="mt-7">
               <h2
                 className="font-serif text-balance text-[10vw] leading-[0.92] text-cream sm:text-[8vw] md:text-[6vw] lg:text-[5.4vw]"

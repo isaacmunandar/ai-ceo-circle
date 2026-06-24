@@ -25,7 +25,7 @@ export const HERO = {
   description:
     "AI CEO Circle is MAXY AI's exclusive private executive mentoring program — where CEOs and senior business leaders in Indonesia and Singapore build their own AI agents and a Digital CEO Twin alongside practitioners who have already done it.",
   ctaPrimary: "Apply for the next cohort",
-  ctaSecondary: "Download program overview",
+  ctaSecondary: "Explore the program",
 };
 
 export const POWERED_BY = [
@@ -34,7 +34,7 @@ export const POWERED_BY = [
   "Max 10 CEOs",
   "Application required",
   "Indonesia · Singapore",
-  "Bilingual · EN / ID",
+  "Sessions: EN + ID",
   "Practitioners, not lecturers",
 ];
 
@@ -69,7 +69,6 @@ export const ECOSYSTEM = {
   ],
   outro:
     "AI CEO Circle is the executive entry point. Once you join, your entire organization unlocks access to MAXY AI's training, agentic AI builds, and AI-native talent placement — a full transformation journey, not a one-time program.",
-  pillars: [],
 };
 
 export const PROBLEM = {
@@ -149,7 +148,7 @@ export const TIMELINE = {
     {
       window: "Throughout",
       title: "Monthly sessions + 1-on-1 with Isaac + peer CEO network",
-      body: "Small cohort, maximum 15. Jakarta and Singapore offline events (3 total). Private peer community. Direct access to Isaac Munandar and the MAXY AI leadership team.",
+      body: "Small cohort, maximum 10. Jakarta and Singapore offline events (3 total). Private peer community. Direct access to Isaac Munandar and the MAXY AI leadership team.",
     },
   ],
 };
@@ -281,7 +280,7 @@ export const FAQ = {
     },
     {
       q: "What is the program investment?",
-      a: "Program pricing is shared after your application is reviewed and a discovery call is completed. AI CEO Circle uses an application and selection process — not everyone is accepted. The cohort is small, and peer quality is part of the value.",
+      a: "AI CEO Circle is structured as a private executive engagement — not a course — and priced accordingly. Exact investment is shared after your application is reviewed and a discovery call confirms mutual fit. You will have full clarity before any commitment is made. Cohort selection is deliberate: peer quality is part of what you're investing in.",
     },
     {
       q: "What happens after the 6 months?",

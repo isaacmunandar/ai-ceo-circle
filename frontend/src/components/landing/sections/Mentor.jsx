@@ -105,13 +105,10 @@ const Mentor = () => {
                     </span>
                   </h3>
                   <p className="mt-2 text-[14px] text-cream-soft">{MENTOR.lead.role}</p>
-                  <a
-                    href="#apply"
-                    className="mt-2 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.38em] text-[#C9920A] hover:text-cream"
-                  >
+                  <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.38em] text-[#C9920A]">
                     <AtSign className="h-3 w-3" />
                     {MENTOR.lead.handle}
-                  </a>
+                  </span>
                 </div>
               </div>
               <p className="mt-10 max-w-2xl text-[15px] leading-relaxed text-cream-soft">{MENTOR.lead.bio}</p>

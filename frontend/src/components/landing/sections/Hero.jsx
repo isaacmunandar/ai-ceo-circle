@@ -83,7 +83,7 @@ const Hero = () => {
                 </MagneticButton>
                 <a
                   href="#program"
-                  className="group inline-flex items-center gap-2 text-[13px] tracking-tight text-cream/80 transition-colors hover:text-cream"
+                  className="group inline-flex min-h-[44px] items-center gap-2 text-[13px] tracking-tight text-cream/80 transition-colors hover:text-cream"
                 >
                   <span className="underline decoration-cream/30 underline-offset-[6px] group-hover:decoration-[#C9920A]">
                     {HERO.ctaSecondary}
@@ -147,7 +147,7 @@ const Hero = () => {
               >
                 {s.value}
               </motion.span>
-              <span className="mt-1.5 font-mono text-[9px] uppercase leading-tight tracking-[0.32em] text-cream-dim">
+              <span className="mt-1.5 font-mono text-[10px] uppercase leading-tight tracking-[0.32em] text-cream-dim">
                 {s.label}
               </span>
             </motion.div>

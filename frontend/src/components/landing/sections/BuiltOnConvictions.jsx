@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
-import SectionLabel from "@/components/landing/ui/SectionLabel";
+
 import Reveal from "@/components/landing/ui/Reveal";
 import { ArrowUpRight } from "lucide-react";
 
@@ -35,8 +35,13 @@ const convictions = [
 
 const FlipCard = ({ conviction, index }) => {
   const [flipped, setFlipped] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
   const prefersReduced = useReducedMotion();
   const duration = prefersReduced ? 0 : 0.55;
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(hover: none)").matches);
+  }, []);
 
   const titleWords = conviction.title.split(" ");
   const titleHead = titleWords.slice(0, -1).join(" ");
@@ -89,6 +94,7 @@ const FlipCard = ({ conviction, index }) => {
 
           {/* Back: conviction text */}
           <div
+            aria-hidden="true"
             style={{
               backfaceVisibility: "hidden",
               WebkitBackfaceVisibility: "hidden",
@@ -115,7 +121,7 @@ const FlipCard = ({ conviction, index }) => {
                 </p>
               </div>
               <span className="font-mono text-[9px] uppercase tracking-[0.32em] text-cream-dim">
-                Hover to flip back
+                {isTouch ? "Tap to flip back" : "Hover to flip back"}
               </span>
             </div>
           </div>
@@ -131,7 +137,6 @@ const BuiltOnConvictions = () => {
       <Container>
         <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-7">
-            <SectionLabel>Built on convictions</SectionLabel>
             <Reveal className="mt-7">
               <h2
                 className="font-serif text-balance text-[14vw] leading-[0.9] text-cream sm:text-[10vw] md:text-[8vw] lg:text-[7.5vw]"
@@ -151,7 +156,7 @@ const BuiltOnConvictions = () => {
               </p>
               <a
                 href="#program"
-                className="mt-7 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.38em] text-cream transition-colors hover:text-[#C9920A]"
+                className="mt-4 inline-flex min-h-[44px] items-center gap-2 font-mono text-[10px] uppercase tracking-[0.38em] text-cream transition-colors hover:text-[#C9920A]"
               >
                 Explore the program
                 <ArrowUpRight className="h-3.5 w-3.5" />

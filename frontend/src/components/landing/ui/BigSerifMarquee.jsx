@@ -7,16 +7,20 @@ import {
   useTransform,
   useMotionValue,
   useAnimationFrame,
+  useReducedMotion,
 } from "framer-motion";
 
 /**
  * Scroll-velocity driven marquee — base speed + accelerates on scroll.
  * Uses framer-motion useAnimationFrame instead of CSS animation so scroll
  * velocity can be injected directly into the translation.
+ * offsetWidth is cached via ResizeObserver to avoid a DOM read every frame.
  */
 const ScrollMarqueeRow = ({ words, separator, fontCls, reverse = false, baseSpeed = 130 }) => {
   const rowRef = useRef(null);
+  const rowWidthRef = useRef(0);
   const x = useMotionValue(0);
+  const prefersReduced = useReducedMotion();
 
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -29,11 +33,21 @@ const ScrollMarqueeRow = ({ words, separator, fontCls, reverse = false, baseSpee
     }
   }, [reverse, x]);
 
+  // Cache offsetWidth via ResizeObserver — no DOM read inside the frame loop.
+  useEffect(() => {
+    const el = rowRef.current;
+    if (!el) return;
+    rowWidthRef.current = el.offsetWidth;
+    const ro = new ResizeObserver(() => { rowWidthRef.current = el.offsetWidth; });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
   useAnimationFrame((_, delta) => {
-    const rowWidth = rowRef.current?.offsetWidth;
+    if (prefersReduced) return;
+    const rowWidth = rowWidthRef.current;
     if (!rowWidth) return;
 
-    // boost: 1× at rest → up to ~4× on fast scroll
     const boost = Math.abs(velocityFactor.get()) * 0.8 + 1;
     const px = baseSpeed * boost * (delta / 1000);
 

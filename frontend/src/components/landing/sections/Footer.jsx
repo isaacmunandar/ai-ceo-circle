@@ -9,10 +9,10 @@ const Footer = () => {
       {/* Massive ghost echo title — magma signature */}
       <div className="relative">
         <Reveal y={40}>
-          <div className="pointer-events-none -mb-6 select-none overflow-hidden pt-16 md:pt-24">
-            <h2 className="font-serif-italic text-stroke whitespace-nowrap text-center text-[18vw] leading-[0.9] tracking-[-0.04em] sm:text-[14vw] md:text-[12vw] lg:text-[11vw]">
+          <div className="pointer-events-none -mb-6 select-none overflow-hidden pt-16 md:pt-24" aria-hidden="true">
+            <div className="font-serif-italic text-stroke whitespace-nowrap text-center text-[18vw] leading-[0.9] tracking-[-0.04em] sm:text-[14vw] md:text-[12vw] lg:text-[11vw]">
               Lead the AI era.
-            </h2>
+            </div>
           </div>
         </Reveal>
         {/* fade into footer */}
@@ -55,7 +55,7 @@ const Footer = () => {
                   <li key={j}>
                     <a
                       href="#apply"
-                      className="font-serif text-[16px] text-cream-soft transition-colors hover:text-lava"
+                      className="inline-flex min-h-[44px] items-center font-serif text-[16px] text-cream-soft transition-colors hover:text-lava"
                     >
                       {l}
                     </a>

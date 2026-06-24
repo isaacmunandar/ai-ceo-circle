@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
-import SectionLabel from "@/components/landing/ui/SectionLabel";
+
 import Reveal from "@/components/landing/ui/Reveal";
 import Spotlight from "@/components/landing/ui/Spotlight";
 import BigSerifMarquee from "@/components/landing/ui/BigSerifMarquee";
@@ -23,7 +23,6 @@ const Ecosystem = () => {
       <Container className="pt-28 pb-32 md:pt-36 md:pb-40">
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
-            <SectionLabel>About MAXY AI</SectionLabel>
             <Reveal className="mt-7">
               <h2
                 className="font-serif text-balance text-[12vw] leading-[0.92] text-cream sm:text-[9vw] md:text-[7.2vw] lg:text-[6.2vw]"
@@ -36,7 +35,7 @@ const Ecosystem = () => {
               <p className="max-w-xl text-[16px] leading-relaxed text-cream-soft">{ECOSYSTEM.intro}</p>
               <a
                 href="#apply"
-                className="mt-7 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.38em] text-cream transition-colors hover:text-[#C9920A]"
+                className="mt-4 inline-flex min-h-[44px] items-center gap-2 font-mono text-[10px] uppercase tracking-[0.38em] text-cream transition-colors hover:text-[#C9920A]"
               >
                 Encode your know-how
                 <ArrowUpRight className="h-3.5 w-3.5" />

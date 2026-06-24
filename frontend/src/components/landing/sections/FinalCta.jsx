@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
 import Reveal from "@/components/landing/ui/Reveal";
@@ -14,6 +14,7 @@ const HORIZONS = [
 ];
 
 const FinalCta = () => {
+  const prefersReduced = useReducedMotion();
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     first: "", last: "", email: "", company: "", role: "",
@@ -30,33 +31,36 @@ const FinalCta = () => {
       {/* Atmospheric lava backdrop */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <motion.div
-          animate={{ rotate: [0, 90, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+          animate={prefersReduced ? { rotate: 0, scale: 1 } : { rotate: [0, 90, 0], scale: [1, 1.2, 1] }}
+          transition={prefersReduced ? { duration: 0 } : { duration: 22, repeat: Infinity, ease: "linear" }}
           className="absolute -top-24 right-[5%] h-[640px] w-[640px] rounded-full"
           style={{
             background:
               "radial-gradient(circle at 40% 40%, rgba(201,146,10,0.22), rgba(138,102,8,0.10) 45%, transparent 72%)",
-            filter: "blur(140px)",
+            filter: "blur(90px)",
+            willChange: "transform",
           }}
         />
         <motion.div
-          animate={{ rotate: [0, -120, 0], scale: [1, 1.3, 1] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          animate={prefersReduced ? { rotate: 0, scale: 1 } : { rotate: [0, -120, 0], scale: [1, 1.3, 1] }}
+          transition={prefersReduced ? { duration: 0 } : { duration: 30, repeat: Infinity, ease: "linear" }}
           className="absolute bottom-[-10%] left-[-8%] h-[560px] w-[560px] rounded-full"
           style={{
             background:
               "radial-gradient(circle at 55% 55%, rgba(31,49,96,0.55), rgba(13,23,41,0.28) 48%, transparent 75%)",
-            filter: "blur(140px)",
+            filter: "blur(90px)",
+            willChange: "transform",
           }}
         />
         <motion.div
-          animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          animate={prefersReduced ? { scale: 1 } : { scale: [1, 1.15, 1] }}
+          transition={prefersReduced ? { duration: 0 } : { duration: 14, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/2 left-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
             background:
               "radial-gradient(circle, rgba(214,58,10,0.28), transparent 70%)",
-            filter: "blur(80px)",
+            filter: "blur(60px)",
+            willChange: "transform",
           }}
         />
       </div>
@@ -107,7 +111,7 @@ const FinalCta = () => {
                     {HORIZONS.map((h) => {
                       const active = form.horizon === h.id;
                       return (
-                        <label key={h.id} className="group flex cursor-pointer items-center gap-3 text-[14.5px] text-cream-soft transition-colors hover:text-cream">
+                        <label key={h.id} className="group flex min-h-[44px] cursor-pointer items-center gap-3 text-[14.5px] text-cream-soft transition-colors hover:text-cream">
                           <input type="radio" name="horizon" checked={active}
                             onChange={() => setForm((f) => ({ ...f, horizon: h.id }))} className="sr-only" />
                           <span className={`grid h-4 w-4 place-items-center rounded-full border-hair transition-colors ${active ? "border-[#C9920A] bg-[#C9920A]" : "border-cream-20 bg-transparent"}`}>
@@ -149,7 +153,7 @@ const FinalCta = () => {
                   The MAXY AI team will review and reach out within 5 business days to schedule a discovery call.
                 </p>
                 <button type="button" onClick={() => setSubmitted(false)}
-                  className="mt-8 font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim hover:text-cream">
+                  className="mt-8 inline-flex min-h-[44px] items-center font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim hover:text-cream">
                   Submit another
                 </button>
               </motion.div>

@@ -58,9 +58,10 @@ const CursorLava = () => {
         <div
           className="-translate-x-1/2 -translate-y-1/2"
           style={{
-            width: pointer === "link" ? 220 : 140,
-            height: pointer === "link" ? 220 : 140,
-            transition: "width .35s ease, height .35s ease",
+            width: 220,
+            height: 220,
+            transform: `scale(${pointer === "link" ? 1 : 0.636})`,
+            transition: "transform .35s ease",
             background:
               "radial-gradient(circle, rgba(255,93,42,0.32), rgba(255,80,25,0.14) 40%, transparent 70%)",
             filter: "blur(8px)",
@@ -78,9 +79,10 @@ const CursorLava = () => {
         <div
           className="-translate-x-1/2 -translate-y-1/2"
           style={{
-            width: pointer === "link" ? 18 : 10,
-            height: pointer === "link" ? 18 : 10,
-            transition: "width .25s ease, height .25s ease",
+            width: 18,
+            height: 18,
+            transform: `scale(${pointer === "link" ? 1 : 0.556})`,
+            transition: "transform .25s ease",
             background: "radial-gradient(circle, #ffeac4, #ff5d2a 55%, #7a2606 95%)",
             boxShadow: "0 0 18px rgba(255,93,42,0.7), 0 0 36px rgba(255,93,42,0.35)",
             borderRadius: "50%",
