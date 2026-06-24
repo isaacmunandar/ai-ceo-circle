@@ -71,7 +71,7 @@ const FinalCta = () => {
             style={{ letterSpacing: "-0.045em" }}
           >
             <span className="block text-gradient-cream">Secure your sovereignty.</span>
-            <span className="font-serif-italic block text-gradient-lava" style={{ letterSpacing: "-0.05em", marginTop: "-0.03em" }}>
+            <span className="font-serif-italic block text-gradient-lava" style={{ letterSpacing: "-0.05em", marginTop: "-0.03em", paddingBottom: "0.18em" }}>
               Let’s architect your intelligence.
             </span>
           </h2>

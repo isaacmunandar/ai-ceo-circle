@@ -44,7 +44,7 @@ const Qualification = () => {
                 className="font-serif text-balance text-[10vw] leading-[0.92] text-cream sm:text-[8vw] md:text-[6.4vw] lg:text-[5.6vw]"
                 style={{ letterSpacing: "-0.045em" }}
               >
-                Is this program <span className="font-serif-italic text-gradient-lava">for you?</span>
+                Is this program <span className="font-serif-italic text-gradient-lava" style={{ paddingBottom: "0.18em" }}>for you?</span>
               </h2>
             </Reveal>
           </div>

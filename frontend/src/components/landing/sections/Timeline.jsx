@@ -26,7 +26,7 @@ const Timeline = () => {
                 style={{ letterSpacing: "-0.045em" }}
               >
                 A 6-month{" "}
-                <span className="font-serif-italic text-gradient-lava">mentoring circle</span>
+                <span className="font-serif-italic text-gradient-lava" style={{ paddingBottom: "0.18em" }}>mentoring circle</span>
               </h2>
             </Reveal>
           </div>

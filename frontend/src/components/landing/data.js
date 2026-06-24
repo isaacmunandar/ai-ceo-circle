@@ -23,7 +23,7 @@ export const HERO = {
   titleA: "Lead the AI era.",
   titleB: "Don't just survive it.",
   description:
-    "AI CEO Circle is MAXY AI's exclusive 6-month executive mentoring program — where CEOs and senior business leaders in Indonesia and Singapore build their own AI agents and a Digital CEO Twin alongside practitioners who have already done it.",
+    "AI CEO Circle is MAXY AI's exclusive private executive mentoring program — where CEOs and senior business leaders in Indonesia and Singapore build their own AI agents and a Digital CEO Twin alongside practitioners who have already done it.",
   ctaPrimary: "Apply for the next cohort",
   ctaSecondary: "Download program overview",
 };
@@ -31,7 +31,7 @@ export const HERO = {
 export const POWERED_BY = [
   "Powered by MAXY AI",
   "Next cohort · Sep 2026",
-  "Max 15 CEOs",
+  "Max 10 CEOs",
   "Application required",
   "Indonesia · Singapore",
   "Bilingual · EN / ID",
@@ -39,8 +39,7 @@ export const POWERED_BY = [
 ];
 
 export const STATS_HERO = [
-  { value: "15", label: "Seats per cohort" },
-  { value: "6", label: "Months program" },
+  { value: "10", label: "Seats per cohort" },
   { value: "1", label: "AI agent built" },
   { value: "1", label: "Digital CEO Twin" },
   { value: "3", label: "Live events" },
@@ -70,12 +69,7 @@ export const ECOSYSTEM = {
   ],
   outro:
     "AI CEO Circle is the executive entry point. Once you join, your entire organization unlocks access to MAXY AI's training, agentic AI builds, and AI-native talent placement — a full transformation journey, not a one-time program.",
-  pillars: [
-    { tag: "B2C + B2B", text: "Dual-track AI education ecosystem" },
-    { tag: "ID + SG", text: "Indonesia primary · Singapore active" },
-    { tag: "3 tracks", text: "Students · Enterprises · C-Suite" },
-    { tag: "End-to-end", text: "Train → Transform → Place talent" },
-  ],
+  pillars: [],
 };
 
 export const PROBLEM = {
@@ -301,8 +295,8 @@ export const FAQ = {
 };
 
 export const FINAL_CTA = {
-  eyebrow: "15 seats · Cohort 01 · September 2026",
-  titleA: "15 seats. One cohort.",
+  eyebrow: "10 seats · Cohort 01 · September 2026",
+  titleA: "10 seats. One cohort.",
   titleB: "This is your move.",
   body: "The CEOs who will lead the next 5 years are the ones who act on AI in the next 6 months — not the ones who plan to. AI CEO Circle is MAXY AI's most exclusive program. If you're ready to build, not just learn, apply now.",
   primary: "Apply for the next cohort",

@@ -71,7 +71,7 @@ const Faq = () => {
                 className="font-serif text-balance text-[10vw] leading-[0.92] text-cream sm:text-[8vw] md:text-[6.4vw] lg:text-[5.6vw]"
                 style={{ letterSpacing: "-0.045em" }}
               >
-                Common <span className="font-serif-italic text-gradient-lava">questions</span>
+                Common <span className="font-serif-italic text-gradient-lava" style={{ paddingBottom: "0.18em" }}>questions</span>
               </h2>
             </Reveal>
           </div>

@@ -29,7 +29,7 @@ const Ecosystem = () => {
                 className="font-serif text-balance text-[12vw] leading-[0.92] text-cream sm:text-[9vw] md:text-[7.2vw] lg:text-[6.2vw]"
                 style={{ letterSpacing: "-0.045em" }}
               >
-                Tailored <span className="font-serif-italic text-gradient-lava">AI Systems</span>
+                Tailored <span className="font-serif-italic text-gradient-lava" style={{ paddingBottom: "0.18em" }}>AI Systems</span>
               </h2>
             </Reveal>
             <Reveal delay={0.08} className="mt-8">
@@ -99,33 +99,7 @@ const Ecosystem = () => {
           </div>
         </div>
 
-        {/* Pillars row — Spotlight cards */}
         <Reveal delay={0.15}>
-          <div className="mt-16 grid grid-cols-2 gap-3 lg:grid-cols-4">
-            {ECOSYSTEM.pillars.map((p, i) => (
-              <Spotlight
-                key={i}
-                className="border border-hair border-white/[0.06] bg-[rgba(8,14,28,0.4)] backdrop-blur-md"
-                radius={300}
-                lift={4}
-              >
-                <div className="rounded-2xl p-6">
-                  <div className="font-mono text-[10px] uppercase tracking-[0.38em] text-[#C9920A]">
-                    {p.tag}
-                  </div>
-                  <div
-                    className="mt-3 font-serif text-[20px] leading-snug text-cream"
-                    style={{ letterSpacing: "-0.03em" }}
-                  >
-                    {p.text}
-                  </div>
-                </div>
-              </Spotlight>
-            ))}
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.2}>
           <p className="mt-12 max-w-3xl text-[16px] leading-relaxed text-cream-soft">{ECOSYSTEM.outro}</p>
         </Reveal>
       </Container>

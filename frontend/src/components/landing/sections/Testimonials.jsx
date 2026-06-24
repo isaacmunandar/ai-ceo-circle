@@ -20,7 +20,7 @@ const Testimonials = () => {
                 className="font-serif text-balance text-[10vw] leading-[0.92] text-cream sm:text-[8vw] md:text-[6.2vw] lg:text-[5.2vw]"
                 style={{ letterSpacing: "-0.04em" }}
               >
-                What CEOs <span className="font-serif-italic text-gradient-lava">are saying</span>
+                What CEOs <span className="font-serif-italic text-gradient-lava" style={{ paddingBottom: "0.18em" }}>are saying</span>
               </h2>
             </Reveal>
           </div>

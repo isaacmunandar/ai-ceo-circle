@@ -19,7 +19,7 @@ const Program = () => {
                 style={{ letterSpacing: "-0.045em" }}
               >
                 What AI CEO Circle{" "}
-                <span className="font-serif-italic text-gradient-lava">actually delivers</span>
+                <span className="font-serif-italic text-gradient-lava" style={{ paddingBottom: "0.18em" }}>actually delivers</span>
               </h2>
             </Reveal>
           </div>

@@ -21,7 +21,7 @@ const Problem = () => {
                 style={{ letterSpacing: "-0.04em" }}
               >
                 The real AI problem isn't technology.{" "}
-                <span className="font-serif-italic text-gradient-lava">It's leadership.</span>
+                <span className="font-serif-italic text-gradient-lava" style={{ paddingBottom: "0.18em" }}>It's leadership.</span>
               </h2>
             </Reveal>
           </div>
