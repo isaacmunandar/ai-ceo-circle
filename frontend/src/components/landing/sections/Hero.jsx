@@ -105,6 +105,8 @@ const Hero = () => {
                 src="https://picsum.photos/seed/ai-ceo-executive/600/750"
                 alt="Executive AI leadership"
                 className="h-full w-full object-cover"
+                fetchPriority="high"
+                loading="eager"
               />
               {/* Bottom-to-top dark overlay so hero bg bleeds naturally */}
               <div
