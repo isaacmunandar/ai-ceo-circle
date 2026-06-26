@@ -10,6 +10,7 @@ import Problem from "@/components/landing/sections/Problem";
 import Program from "@/components/landing/sections/Program";
 import Timeline from "@/components/landing/sections/Timeline";
 import Testimonials from "@/components/landing/sections/Testimonials";
+import SocialMedia from "@/components/landing/sections/SocialMedia";
 import Qualification from "@/components/landing/sections/Qualification";
 import Mentor from "@/components/landing/sections/Mentor";
 import Aftermath from "@/components/landing/sections/Aftermath";
@@ -42,6 +43,7 @@ const LandingPage = () => {
       <Program />
       <Timeline />
       <Testimonials />
+      <SocialMedia />
       <Qualification />
       <Mentor />
       <Aftermath />
