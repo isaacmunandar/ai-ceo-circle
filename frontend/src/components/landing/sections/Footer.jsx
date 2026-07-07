@@ -30,7 +30,7 @@ const Footer = () => {
               <span className="font-serif-italic text-lava text-[20px]">.</span>
             </div>
             <p className="mt-5 max-w-sm text-[13.5px] leading-relaxed text-cream-soft">
-              The executive entry point into MAXY AI — a 6-month mentoring circle for CEOs ready to build AI inside their business, not just learn about it.
+              The executive entry point into MAXY AI — a 4-month mentoring circle for CEOs ready to build AI inside their business, not just learn about it.
             </p>
             <div className="mt-8 flex flex-col gap-1.5">
               {FOOTER.contact.map((c, i) => (
