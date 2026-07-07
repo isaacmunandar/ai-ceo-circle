@@ -13,9 +13,11 @@ export const META = {
 export const NAV_LINKS = [
   { label: "Ecosystem", href: "#ecosystem" },
   { label: "Program", href: "#program" },
-  { label: "Format", href: "#format" },
-  { label: "Mentor", href: "#mentor" },
+  { label: "Testimony", href: "#voices" },
+  { label: "Updates", href: "#social" },
+  { label: "Qualification", href: "#qualification" },
   { label: "FAQ", href: "#faq" },
+  { label: "Video", href: "#video" },
 ];
 
 export const HERO = {
@@ -104,7 +106,7 @@ export const PROGRAM = {
   label: "The program",
   title: "What AI CEO Circle actually delivers",
   intro:
-    "Three core outcomes. Six months. You leave with AI systems running in your business — not just ideas in your head.",
+    "Three core outcomes. You leave with AI systems running in your business — not just ideas in your head.",
   items: [
     {
       tag: "Strategic foundation",
@@ -126,28 +128,28 @@ export const PROGRAM = {
 
 export const TIMELINE = {
   label: "The format",
-  title: "A 4-month executive mentoring circle",
+  title: "An executive mentoring circle",
   intro:
-    "Built for leaders who execute. Approximately 4–6 hours per month. Sessions fit executive schedules.",
+    "Built for leaders who execute. Sessions fit executive schedules.",
   steps: [
     {
-      window: "Month 1–2",
+      window: "Phase 1",
       title: "Map your business and build your AI strategy",
       body: "Map your decision flows and high-leverage processes. Build your company's AI roadmap. Begin your Digital CEO Twin architecture with Isaac and the MAXY AI team.",
     },
     {
-      window: "Month 3–4",
+      window: "Phase 2",
       title: "Build your first AI agent",
       body: "Hands-on implementation workshop: build and deploy one AI agent that removes a real operational bottleneck. No code required. MAXY AI's agentic AI team builds alongside you.",
     },
     {
-      window: "Month 5–6",
+      window: "Phase 3",
       title: "Deploy your Digital CEO Twin and scale",
       body: "Complete and activate your Digital CEO Twin. Expand AI systems across divisions. Build internal capability to keep scaling independently after the program ends.",
     },
     {
-      window: "Throughout",
-      title: "Monthly sessions + 1-on-1 with Isaac + peer CEO network",
+      window: "Ongoing",
+      title: "Group sessions + 1-on-1 with Isaac + peer CEO network",
       body: "Small cohort, maximum 10. Jakarta and Singapore offline events (3 total). Private peer community. Direct access to Isaac Munandar and the MAXY AI leadership team.",
     },
   ],
@@ -164,7 +166,7 @@ export const TESTIMONIALS = {
       name: "Reza S.",
       role: "CEO, Manufacturing · Jakarta",
       quote:
-        "Before AI CEO Circle, I knew AI was important but had no idea where to start as a leader. After month 2, I had my first AI agent running our reporting process. 40 hours saved per month — from one build.",
+        "Before AI CEO Circle, I knew AI was important but had no idea where to start as a leader. Shortly after starting, I had my first AI agent running our reporting process. 40 hours saved per month — from one build.",
     },
     {
       initials: "AT",
@@ -195,7 +197,7 @@ export const QUALIFICATION = {
     "You know AI is transforming your industry and want to lead — not react",
     "You're ready to build AI systems in your business, not just learn about them",
     "You want a private peer network of senior leaders doing the same",
-    "You can commit 4–6 hours per month to hands-on implementation",
+    "You can commit the necessary time to hands-on implementation",
   ],
   notForYou: [
     "You want a quick certification course with a completion badge",
@@ -268,7 +270,7 @@ export const FAQ = {
     },
     {
       q: "How much time does this require?",
-      a: "Approximately 4–6 hours per month. One group mentoring session, one implementation workshop, and optional 1-on-1 time with Isaac. Structured around executive schedules.",
+      a: "The program is designed to fit the demanding schedules of active CEOs. It features group mentoring sessions, implementation workshops, and optional 1-on-1 time with Isaac, all structured to maximize outcomes with minimal disruption to your daily operations.",
     },
     {
       q: "What tangible outcomes do I leave with?",
@@ -306,7 +308,7 @@ export const FOOTER = {
   columns: [
     {
       title: "Program",
-      links: ["Ecosystem", "Format", "Mentor", "FAQ", "Apply"],
+      links: ["Ecosystem", "Program", "Testimony", "Updates", "Qualification", "FAQ", "Video", "Apply"],
     },
     {
       title: "MAXY AI",
