@@ -84,21 +84,50 @@ const Problem = () => {
               { src: "/images/problem/problem-2.png", label: "AI leadership summit" },
               { src: "/images/problem/problem-3.png", label: "CEO transformation program" },
             ].map((img, i) => (
-              <div key={i} className="relative overflow-hidden rounded-xl">
+              <div
+                key={i}
+                className={[
+                  "group relative overflow-hidden rounded-xl border border-white/[0.06] bg-[rgba(8,14,28,0.45)] shadow-[0_18px_60px_rgba(4,9,20,0.28)]",
+                  "transition-[transform,border-color,box-shadow] duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] motion-safe:hover:-translate-y-2 hover:border-[#C9920A]/35 hover:shadow-[0_26px_80px_rgba(201,146,10,0.16)]",
+                  i === 0 ? "motion-safe:hover:-rotate-[0.7deg]" : "",
+                  i === 2 ? "motion-safe:hover:rotate-[0.7deg]" : "",
+                ].join(" ")}
+              >
                 <img
                   src={img.src}
                   alt={img.label}
-                  className="h-[190px] w-full object-cover transition-transform duration-700 hover:scale-105 md:h-[210px]"
+                  className={[
+                    "h-[190px] w-full object-cover [filter:saturate(0.6)_brightness(0.68)] transition-[transform,filter] duration-700 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] md:h-[210px]",
+                    "motion-safe:group-hover:scale-110 group-hover:[filter:saturate(0.82)_brightness(0.78)]",
+                    i === 0 ? "motion-safe:group-hover:translate-x-2" : "",
+                    i === 2 ? "motion-safe:group-hover:-translate-x-2" : "",
+                  ].join(" ")}
                   loading="lazy"
-                  style={{ filter: "saturate(0.6) brightness(0.68)" }}
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-0"
+                  className="absolute inset-0 transition-opacity duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-75"
                   style={{
                     background:
                       "linear-gradient(to top, rgba(7,14,28,0.62) 0%, rgba(7,14,28,0.12) 50%, transparent 100%)",
                   }}
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 opacity-0 transition-opacity duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 50% 110%, rgba(201,146,10,0.34) 0%, rgba(201,146,10,0.12) 30%, transparent 62%)",
+                  }}
+                />
+                <div className="absolute inset-x-0 bottom-0 translate-y-3 p-4 opacity-0 transition-[transform,opacity] duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] motion-safe:group-hover:translate-y-0 group-hover:opacity-100">
+                  <span className="inline-flex rounded-full border border-[#C9920A]/25 bg-[#070e1c]/65 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.26em] text-cream backdrop-blur-md">
+                    {img.label}
+                  </span>
+                </div>
+                <div
+                  aria-hidden
+                  className="absolute left-4 top-4 h-8 w-px origin-top scale-y-0 bg-[#C9920A]/70 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] motion-safe:group-hover:scale-y-100"
                 />
               </div>
             ))}

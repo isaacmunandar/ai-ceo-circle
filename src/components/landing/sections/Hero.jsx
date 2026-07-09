@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { m } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
@@ -107,17 +108,12 @@ const Hero = () => {
             className="md:col-span-5"
           >
             <div className="relative overflow-hidden rounded-2xl h-64 sm:h-80 md:h-[540px]">
-              {/* Placeholder until real executive portrait is available */}
-              <div
-                className="h-full w-full"
-                style={{
-                  background: [
-                    "radial-gradient(ellipse 80% 60% at 60% 25%, rgba(201,146,10,0.22), transparent 55%)",
-                    "radial-gradient(ellipse 65% 55% at 25% 75%, rgba(31,49,96,0.45), transparent 60%)",
-                    "radial-gradient(ellipse 50% 40% at 85% 65%, rgba(214,58,10,0.18), transparent 55%)",
-                    "linear-gradient(160deg, #1a2848 0%, #0d1828 40%, #12100a 70%, #1e1508 100%)",
-                  ].join(", "),
-                }}
+              <Image
+                src="/images/hero-ceo.jpeg"
+                alt="CEO looking over a city skyline"
+                fill
+                sizes="(min-width: 768px) 42vw, 100vw"
+                className="object-cover"
               />
               <div
                 className="absolute inset-0"

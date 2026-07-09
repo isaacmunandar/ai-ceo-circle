@@ -152,7 +152,7 @@ const BuiltOnConvictions = () => {
           <div className="md:col-span-5 md:pt-10">
             <Reveal delay={0.1}>
               <p className="text-[16px] leading-relaxed text-cream-soft">
-                Increase your speed-to-decision and eliminate manual debt by transforming a CEO&apos;s business judgment into proprietary AI systems — owned, encoded, and scaled inside your company.
+                Increase your speed-to-decision and eliminate manual debt by transforming a CEO&apos;s business judgment into proprietary AI systems who got owned, encoded, and scaled inside your company.
               </p>
               <a
                 href="#program"

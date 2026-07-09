@@ -25,7 +25,7 @@ export const HERO = {
   titleA: "Lead the AI era.",
   titleB: "Don't just survive it.",
   description:
-    "AI CEO Circle is MAXY AI's exclusive private executive mentoring program — where CEOs and senior business leaders in Indonesia and Singapore build their own AI agents and a Digital CEO Twin alongside practitioners who have already done it.",
+    "AI CEO Circle is MAXY AI's exclusive private executive mentoring program, where CEOs and senior business leaders in Indonesia and Singapore build their own AI agents and a Digital CEO Twin alongside practitioners who have already done it.",
   ctaPrimary: "Apply for the next cohort",
   ctaSecondary: "Explore the program",
 };
