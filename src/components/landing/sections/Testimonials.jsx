@@ -46,7 +46,7 @@ const Testimonials = () => {
                       className="font-serif-italic text-[88px] leading-none text-[#C9920A]/40"
                       style={{ display: "inline-block" }}
                     >
-                      "
+                      &quot;
                     </m.span>
                     <p
                       className="-mt-8 font-serif text-[20px] leading-[1.32] text-cream md:text-[23px]"

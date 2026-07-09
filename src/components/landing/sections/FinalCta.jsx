@@ -237,7 +237,7 @@ const FinalCta = () => {
                 <div className="flex flex-col gap-3 p-4 md:p-5 rounded-lg border-hair border-[#C9920A]/20 bg-[#C9920A]/5">
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#C9920A]">Busy schedule?</span>
                   <p className="text-[12.5px] md:text-[13.5px] leading-relaxed text-cream-soft">
-                    We understand your time is highly valuable. You can skip the detailed questions and submit now. Isaac's team will collect these details later.
+                    We understand your time is highly valuable. You can skip the detailed questions and submit now. Isaac&apos;s team will collect these details later.
                   </p>
                   <div>
                     <button
