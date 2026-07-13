@@ -4,5 +4,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "app", "next.config.js"]
+  "include": ["src", "app", "next.config.js", "public/images/landing"]
 }

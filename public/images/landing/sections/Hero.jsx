@@ -32,7 +32,7 @@ const Hero = () => {
           }}
         >
           <Image
-            src="/images/hero-bg.webp"
+            src="/images/hero-bg.jpg"
             alt=""
             fill
             priority
