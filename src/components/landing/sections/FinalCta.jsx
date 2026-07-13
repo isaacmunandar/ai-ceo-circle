@@ -137,13 +137,13 @@ const FinalCta = () => {
             {!submitted ? (
               <form onSubmit={onProceed} noValidate className="grid grid-cols-1 gap-x-12 gap-y-10 border-t-[0.5px] border-cream-10 pt-12 md:grid-cols-2 md:pt-16">
                 <Field label="Full name" required error={errors.fullName}>
-                  <input required value={form.fullName} onChange={onChange("fullName")} onBlur={onBlurField("fullName")} placeholder="Budi Santoso" className="input" />
+                  <input required value={form.fullName} onChange={onChange("fullName")} onBlur={onBlurField("fullName")} placeholder="Edwin Tanuwijaya" className="input" />
                 </Field>
                 <Field label="Email" required error={errors.email}>
-                  <input required type="email" value={form.email} onChange={onChange("email")} onBlur={onBlurField("email")} placeholder="budi@perusahaan.com" className="input" />
+                  <input required type="email" value={form.email} onChange={onChange("email")} onBlur={onBlurField("email")} placeholder="edwin.tan@pradiyata.com" className="input" />
                 </Field>
                 <Field label="Company" required error={errors.company} className="md:col-span-2">
-                  <input required value={form.company} onChange={onChange("company")} onBlur={onBlurField("company")} placeholder="Company name" className="input" />
+                  <input required value={form.company} onChange={onChange("company")} onBlur={onBlurField("company")} placeholder="Pradiyata Excellence" className="input" />
                 </Field>
 
                 <div className="md:col-span-2 flex flex-col gap-6 border-t-[0.5px] border-cream-10 pt-8">
