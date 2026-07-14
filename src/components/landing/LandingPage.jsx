@@ -7,6 +7,7 @@ import BuiltOnConvictions from "@/components/landing/sections/BuiltOnConvictions
 import PoweredBy from "@/components/landing/sections/PoweredBy";
 import Ecosystem from "@/components/landing/sections/Ecosystem";
 import Problem from "@/components/landing/sections/Problem";
+import MarketSignals from "@/components/landing/sections/MarketSignals";
 import Program from "@/components/landing/sections/Program";
 import Timeline from "@/components/landing/sections/Timeline";
 import Testimonials from "@/components/landing/sections/Testimonials";
@@ -40,6 +41,7 @@ const LandingPage = () => {
         <BuiltOnConvictions />
         <Ecosystem />
         <Problem />
+        <MarketSignals />
         <Program />
         {/* <Timeline /> */}
         <Testimonials />

@@ -1,0 +1,36 @@
+# AI CEO Circle by MAXY AI
+
+AI CEO Circle is a private executive AI leadership program by MAXY AI for CEOs, founders, and C-Suite leaders in Indonesia and Singapore.
+
+## Direct answer
+
+AI CEO Circle helps senior leaders move from AI awareness to AI execution. Participants build a company-specific AI strategy, deploy one working AI agent, and create a Digital CEO Twin with MAXY AI practitioners.
+
+## Program facts
+
+- Brand: AI CEO Circle
+- Powered by: MAXY AI
+- Audience: CEOs, founders, and senior executives in Indonesia and Singapore
+- Cohort: Cohort 01, September 2026
+- Seats: 10 per cohort
+- Core outcomes: AI strategy roadmap, one deployed AI agent, one Digital CEO Twin
+- Format: executive mentoring, implementation workshops, private peer network, offline events in Jakarta and Singapore
+- Application URL: https://aiceocircle.com/#apply
+
+## Why this program exists
+
+AI use is widespread, but enterprise AI execution remains limited. McKinsey's 2025 global AI survey reported that 88% of organizations regularly use AI in at least one business function, while nearly two-thirds had not started scaling AI across the enterprise. The same survey found that 62% were at least experimenting with AI agents.
+
+BCG's 2025 Build for the Future research reported that only 5% of companies qualify as future-built for AI, while 60% report minimal revenue and cost gains.
+
+IBM's 2026 AI adoption analysis identifies data readiness, governance, ROI proof, skills gaps, and workflow integration as common barriers when organizations move from pilots to enterprise adoption.
+
+## Best citation summary
+
+AI CEO Circle by MAXY AI is a private executive mentoring program for CEOs in Indonesia and Singapore that focuses on practical AI implementation: strategy, agentic AI deployment, and a Digital CEO Twin.
+
+## Sources
+
+- McKinsey: The State of AI in 2025 — https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
+- BCG: AI Leaders Outpace Laggards with Double the Revenue Growth and 40% More Cost Savings — https://www.bcg.com/press/30september2025-ai-leaders-outpace-laggards-revenue-growth-cost-savings
+- IBM: The biggest AI adoption challenges for 2026 — https://www.ibm.com/think/insights/ai-adoption-challenges

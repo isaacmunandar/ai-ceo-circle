@@ -13,7 +13,7 @@ export const META = {
 export const NAV_LINKS = [
   { label: "Ecosystem", href: "#ecosystem" },
   { label: "Program", href: "#program" },
-  { label: "Testimony", href: "#voices" },
+  { label: "Voices", href: "#voices" },
   { label: "Updates", href: "#social" },
   { label: "Qualification", href: "#qualification" },
   { label: "FAQ", href: "#faq" },

@@ -13,7 +13,7 @@ export const META = {
 export const NAV_LINKS = [
   { label: "Ecosystem", href: "#ecosystem" },
   { label: "Program", href: "#program" },
-  { label: "Testimony", href: "#voices" },
+  { label: "Voices", href: "#voices" },
   { label: "Updates", href: "#social" },
   { label: "Qualification", href: "#qualification" },
   { label: "FAQ", href: "#faq" },
@@ -46,6 +46,36 @@ export const STATS_HERO = [
   { value: "1", label: "Digital CEO Twin" },
   { value: "3", label: "Live events" },
 ];
+
+export const MARKET_SIGNALS = {
+  label: "AI execution gap",
+  title: "AI adoption is common. AI execution is still rare.",
+  intro:
+    "AI CEO Circle is built for the gap between executive interest and operating-system change: strategy, workflow redesign, agentic AI deployment, and leadership accountability in one private cohort.",
+  items: [
+    {
+      value: "88%",
+      title: "of organizations regularly use AI in at least one business function",
+      body: "McKinsey's 2025 global AI survey found broad adoption, but nearly two-thirds of respondents said their organizations had not started scaling AI across the enterprise.",
+      source: "McKinsey, The State of AI in 2025",
+      href: "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+    },
+    {
+      value: "62%",
+      title: "are at least experimenting with AI agents",
+      body: "The same McKinsey survey found strong agentic AI curiosity, while scaling remains narrow across individual business functions.",
+      source: "McKinsey, agentic AI findings",
+      href: "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+    },
+    {
+      value: "5%",
+      title: "of companies qualify as future-built for AI",
+      body: "BCG's 2025 research found that future-built AI leaders are pulling away, while 60% of organizations report minimal revenue and cost gains from AI.",
+      source: "BCG, Build for the Future 2025",
+      href: "https://www.bcg.com/press/30september2025-ai-leaders-outpace-laggards-revenue-growth-cost-savings",
+    },
+  ],
+};
 
 export const ECOSYSTEM = {
   label: "About MAXY AI",
@@ -262,6 +292,10 @@ export const FAQ = {
   title: "Common questions",
   items: [
     {
+      q: "What is AI CEO Circle?",
+      a: "AI CEO Circle is a private executive AI leadership program by MAXY AI for CEOs, founders, and C-Suite leaders in Indonesia and Singapore. Participants build a company-specific AI strategy, deploy one working AI agent, and create a Digital CEO Twin with MAXY AI practitioners.",
+    },
+    {
       q: "Do I need technical AI knowledge to join?",
       a: "No. This program is designed for business leaders, not engineers. MAXY AI's technical team handles all implementation — your role is strategic direction and accountability to outcomes. If you can lead a company, you can do this.",
     },
@@ -305,7 +339,16 @@ export const FOOTER = {
   columns: [
     {
       title: "Program",
-      links: ["Ecosystem", "Program", "Testimony", "Updates", "Qualification", "FAQ", "Video", "Apply"],
+      links: [
+        "Ecosystem",
+        "Program",
+        "Voices",
+        "Updates",
+        "Qualification",
+        "FAQ",
+        "Video",
+        "Apply",
+      ],
     },
     {
       title: "MAXY AI",
