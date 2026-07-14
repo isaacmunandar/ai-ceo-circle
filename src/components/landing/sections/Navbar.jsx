@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { m, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
 import MagneticButton from "@/components/landing/ui/MagneticButton";
-import { NAV_LINKS, META } from "@/components/landing/data";
+import { NAV_LINKS } from "@/components/landing/data";
 
 const NavLink = ({ href, label }) => (
   <a
@@ -40,19 +41,20 @@ const Navbar = () => {
       }`}
     >
       <Container className="flex h-20 items-center justify-between md:h-24">
-        {/* Logo */}
-        <a href="#top" className="group flex items-baseline gap-1">
-          <span className="font-serif text-[26px] leading-none tracking-tight text-cream md:text-[30px]">
-            AI CEO Circle
-          </span>
-          <m.span
-            whileHover={{ scale: 1.3, color: "#ff7a3d" }}
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-            className="font-serif-italic text-lava text-[18px] md:text-[20px]"
-            style={{ display: "inline-block" }}
-          >
-            .
-          </m.span>
+        <a
+          href="#top"
+          aria-label="AI CEO Circle by MAXY AI"
+          className="group inline-flex min-h-[44px] items-center"
+        >
+          <Image
+            src="/images/logo-aiceocircle.png"
+            alt="AI CEO Circle powered by MAXY"
+            width={2167}
+            height={692}
+            priority
+            sizes="(min-width: 768px) 180px, 150px"
+            className="h-[42px] w-auto transition-opacity duration-300 group-hover:opacity-85 md:h-[48px]"
+          />
         </a>
 
         {/* Desktop links */}

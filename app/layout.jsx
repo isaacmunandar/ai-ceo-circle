@@ -1,5 +1,6 @@
 import './globals.css';
 import { Inter, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
+import { landingMetadata } from '@/components/landing/seo';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -24,8 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: 'AI CEO Circle - Powered by MAXY AI',
-  description: "Lead the AI era. Don't just survive it.",
+  ...landingMetadata,
   manifest: '/favicon/site.webmanifest',
   icons: {
     icon: [
@@ -35,6 +35,11 @@ export const metadata = {
     ],
     apple: [{ url: '/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
+};
+
+export const viewport = {
+  themeColor: '#070e1c',
+  colorScheme: 'dark',
 };
 
 export default function RootLayout({ children }) {
