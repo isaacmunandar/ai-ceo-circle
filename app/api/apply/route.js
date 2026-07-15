@@ -166,10 +166,10 @@ export async function POST(request) {
 
     // 6. Send Email
     // If domain is not verified on Resend, Resend restricts sending to the verified email only.
-    // So we send FROM onboarding@resend.dev (or similar if using sandbox) and TO isaac.imcapital@gmail.com.
+    // So we send FROM onboarding@resend.dev (or similar if using sandbox) and TO hello@aiceocircle.com.
     const { data, error } = await resend.emails.send({
       from: 'AI CEO Circle <onboarding@resend.dev>',
-      to: 'isaac.imcapital@gmail.com',
+      to: 'hello@aiceocircle.com',
       subject: `[AI CEO Circle] New Application - ${fullName} (${company})`,
       html: htmlContent,
       replyTo: email
