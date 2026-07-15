@@ -55,3 +55,4 @@ Avoid pure black or white and purple-blue gradients.
 ## Last updated
 
 2026-07-13: Reworked the hero into an editorial skyline composition, added a reduced-motion-aware background loop, and documented project tokens.
+2026-07-14: Replaced the navbar wordmark with the official AI CEO Circle by MAXY logo and added a source-backed AI execution gap section using the existing editorial/divider visual system.

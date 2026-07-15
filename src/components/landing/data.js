@@ -32,7 +32,6 @@ export const HERO = {
 
 export const POWERED_BY = [
   "Powered by MAXY AI",
-  "Next cohort · Sep 2026",
   "Max 10 CEOs",
   "Application required",
   "Indonesia · Singapore",
@@ -334,7 +333,7 @@ export const FINAL_CTA = {
 export const FOOTER = {
   contact: [
     { label: "DM", value: "@aiceocircle" },
-    { label: "Email", value: "isaac@maxy.asia" },
+    { label: "Email", value: "hello@aiceocircle.com" },
   ],
   columns: [
     {
@@ -356,7 +355,7 @@ export const FOOTER = {
     },
     {
       title: "Reach",
-      links: ["Jakarta", "Singapore", "isaac@maxy.asia", "@aiceocircle"],
+      links: ["Jakarta", "Singapore", "hello@aiceocircle.com", "@aiceocircle"],
     },
   ],
 };
