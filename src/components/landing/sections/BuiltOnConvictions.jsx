@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { m, useReducedMotion } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 
@@ -66,11 +67,12 @@ const FlipCard = ({ conviction, index }) => {
             style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", position: "absolute", inset: 0 }}
             className="overflow-hidden rounded-2xl"
           >
-            <img
+            <Image
               src={conviction.photo}
               alt={conviction.title}
-              className="h-full w-full object-cover"
-              loading="lazy"
+              fill
+              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+              className="object-cover"
             />
             <div
               className="absolute inset-0"

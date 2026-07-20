@@ -14,20 +14,22 @@ const Hero = () => {
   return (
     <section id="top" className="relative isolate min-h-[100dvh] overflow-hidden pt-20 pb-24 md:pt-24 md:pb-36">
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[#070e1c] z-0">
+        {/* Main Cinematic Pan & Zoom (Ken Burns) */}
         <m.div
-          className="absolute -inset-[3%]"
+          className="absolute -inset-[5%]"
           animate={
             shouldReduceMotion
               ? undefined
               : {
-                  scale: [1.03, 1.09, 1.03],
-                  x: ["-1%", "1%", "-1%"],
-                  y: ["0%", "-1%", "0%"],
+                  scale: [1.02, 1.12, 1.05, 1.02],
+                  x: ["0%", "-1.5%", "1%", "0%"],
+                  y: ["0%", "1%", "-1%", "0%"],
+                  rotate: [0, 0.4, -0.2, 0],
                 }
           }
           transition={{
-            duration: 24,
-            ease: [0.45, 0, 0.55, 1],
+            duration: 35,
+            ease: "easeInOut",
             repeat: Infinity,
           }}
         >
@@ -37,10 +39,31 @@ const Hero = () => {
             fill
             priority
             sizes="100vw"
-            className="object-[65%_center] object-cover opacity-[0.85] blur-[0.75px] brightness-[0.82] md:object-center"
+            className="object-[65%_center] object-cover opacity-[0.80] blur-[0.5px] brightness-[0.85] md:object-center"
           />
         </m.div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070e1c]/75 via-[#070e1c]/38 to-[#070e1c]/5" />
+
+        {/* Dynamic Light Sweep Overlay to simulate moving video atmosphere */}
+        {!shouldReduceMotion && (
+          <m.div
+            className="absolute inset-0 mix-blend-screen"
+            animate={{
+              opacity: [0.1, 0.3, 0.1],
+              backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
+            }}
+            transition={{
+              duration: 20,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+            style={{
+              backgroundImage: "radial-gradient(circle at center, rgba(201,146,10,0.15) 0%, transparent 60%)",
+              backgroundSize: "150% 150%",
+            }}
+          />
+        )}
+
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070e1c]/80 via-[#070e1c]/40 to-[#070e1c]/10" />
       </div>
 
       {/* Status pill */}

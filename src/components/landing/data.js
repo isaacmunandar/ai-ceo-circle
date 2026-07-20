@@ -22,8 +22,8 @@ export const NAV_LINKS = [
 
 export const HERO = {
   eyebrow: "AI CEO Circle · Powered by MAXY AI",
-  titleA: "Lead the AI era.",
-  titleB: "Don't just survive it.",
+  titleA: "AI CEO Circle.",
+  titleB: "Executive AI leadership.",
   description:
     "AI CEO Circle is MAXY AI's exclusive private executive mentoring program, where CEOs and senior business leaders in Indonesia and Singapore build their own AI agents and a Digital CEO Twin alongside practitioners who have already done it.",
   ctaPrimary: "Apply for the next cohort",
@@ -292,31 +292,31 @@ export const FAQ = {
   items: [
     {
       q: "What is AI CEO Circle?",
-      a: "AI CEO Circle is a private executive AI leadership program by MAXY AI for CEOs, founders, and C-Suite leaders in Indonesia and Singapore. Participants build a company-specific AI strategy, deploy one working AI agent, and create a Digital CEO Twin with MAXY AI practitioners.",
+      a: "AI CEO Circle is a private executive AI leadership program by MAXY AI for CEOs, founders, and C-Suite leaders in Indonesia and Singapore. According to McKinsey's 2025 State of AI survey, while 88% of organizations use AI, most fail to scale it. This program closes that execution gap by helping participants build a company-specific AI strategy, deploy one working AI agent, and create a Digital CEO Twin with MAXY AI practitioners.",
     },
     {
       q: "Do I need technical AI knowledge to join?",
-      a: "No. This program is designed for business leaders, not engineers. MAXY AI's technical team handles all implementation — your role is strategic direction and accountability to outcomes. If you can lead a company, you can do this.",
+      a: "No technical knowledge is required. This program is designed specifically for business leaders, not engineers. MAXY AI's technical team handles all implementation — your role is strategic direction and accountability to outcomes. If you can lead a company, you can do this.",
     },
     {
       q: "How much time does this require?",
-      a: "The program is designed to fit the demanding schedules of active CEOs. It features group mentoring sessions, implementation workshops, and optional 1-on-1 time with Isaac, all structured to maximize outcomes with minimal disruption to your daily operations.",
+      a: "The program requires a focused but manageable time commitment designed to fit the demanding schedules of active CEOs. It features group mentoring sessions, implementation workshops, and optional 1-on-1 time with Isaac Munandar, all structured to maximize real business outcomes with minimal disruption to your daily operations.",
     },
     {
       q: "What tangible outcomes do I leave with?",
-      a: "One working AI agent deployed inside your business. Your Digital CEO Twin built and activated. A personalized AI strategy roadmap for your company. Permanent access to the AI CEO Circle peer network across Indonesia and Singapore.",
+      a: "You leave with one working AI agent deployed inside your business, your Digital CEO Twin built and activated, and a personalized AI strategy roadmap for your company. BCG's 2025 research found that only 5% of companies are 'future-built' for AI. To ensure you join that top tier, you also gain permanent access to the AI CEO Circle peer network across Indonesia and Singapore.",
     },
     {
       q: "What language are sessions delivered in?",
-      a: "Bilingual — English and Bahasa Indonesia — to serve both Indonesia and Singapore executives comfortably. Materials are available in both languages.",
+      a: "Sessions are delivered bilingually in English and Bahasa Indonesia to serve both Indonesia and Singapore executives comfortably. All program materials and frameworks are available in both languages.",
     },
     {
       q: "What is the program investment?",
-      a: "AI CEO Circle is structured as a private executive engagement — not a course — and priced accordingly. Exact investment is shared after your application is reviewed and a discovery call confirms mutual fit. You will have full clarity before any commitment is made. Cohort selection is deliberate: peer quality is part of what you're investing in.",
+      a: "AI CEO Circle is structured as a private executive engagement — not a course — and priced accordingly. Exact investment details are shared after your application is reviewed and a discovery call confirms mutual fit. Cohort selection is deliberate: peer quality is a significant part of the value you are investing in.",
     },
     {
       q: "Who runs the program?",
-      a: "Isaac Munandar leads all mentoring sessions personally. The MAXY AI team — Andy Toro (CTO), Stefen (PM), Ika (Ops) — supports the implementation, platform, and program delivery. This is not outsourced. The MAXY AI founding team is in the room with you.",
+      a: "Isaac Munandar, Co-Founder & CEO of MAXY AI, leads all mentoring sessions personally. The MAXY AI executive team — including Andy Toro (CTO), Stefen (PM), and Ika (Ops) — supports the implementation, platform, and program delivery. This is not outsourced; the MAXY AI founding team is in the room with you.",
     },
   ],
 };

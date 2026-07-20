@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { m } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 
@@ -87,22 +88,23 @@ const Problem = () => {
               <div
                 key={i}
                 className={[
-                  "group relative overflow-hidden rounded-xl border border-white/[0.06] bg-[rgba(8,14,28,0.45)] shadow-[0_18px_60px_rgba(4,9,20,0.28)]",
+                  "group relative h-[190px] overflow-hidden rounded-xl border border-white/[0.06] bg-[rgba(8,14,28,0.45)] shadow-[0_18px_60px_rgba(4,9,20,0.28)] md:h-[210px]",
                   "transition-[transform,border-color,box-shadow] duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] motion-safe:hover:-translate-y-2 hover:border-[#C9920A]/35 hover:shadow-[0_26px_80px_rgba(201,146,10,0.16)]",
                   i === 0 ? "motion-safe:hover:-rotate-[0.7deg]" : "",
                   i === 2 ? "motion-safe:hover:rotate-[0.7deg]" : "",
                 ].join(" ")}
               >
-                <img
+                <Image
                   src={img.src}
                   alt={img.label}
+                  fill
+                  sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className={[
-                    "h-[190px] w-full object-cover [filter:saturate(0.6)_brightness(0.68)] transition-[transform,filter] duration-700 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] md:h-[210px]",
+                    "object-cover [filter:saturate(0.6)_brightness(0.68)] transition-[transform,filter] duration-700 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]",
                     "motion-safe:group-hover:scale-110 group-hover:[filter:saturate(0.82)_brightness(0.78)]",
                     i === 0 ? "motion-safe:group-hover:translate-x-2" : "",
                     i === 2 ? "motion-safe:group-hover:-translate-x-2" : "",
                   ].join(" ")}
-                  loading="lazy"
                 />
                 <div
                   aria-hidden

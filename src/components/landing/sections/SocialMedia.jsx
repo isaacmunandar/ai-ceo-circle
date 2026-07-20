@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { m } from "framer-motion";
 import { Instagram, ExternalLink } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
@@ -61,11 +62,12 @@ const SocialMedia = () => {
                     className="relative block w-full aspect-[4/5] overflow-hidden rounded-2xl group/card"
                   >
                     {/* Post Image */}
-                    <img
+                    <Image
                       src={post.image}
                       alt={post.title}
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-105"
-                      loading="lazy"
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover/card:scale-105"
                     />
 
                     {/* Gradient Overlay (Always visible at bottom, expands on hover) */}
