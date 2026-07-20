@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { m } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 import SectionLabel from "@/components/landing/ui/SectionLabel";
@@ -30,12 +31,14 @@ const Aftermath = () => {
         </div>
 
         {AFTERMATH.eventPhoto && (
-          <div className="mt-14 overflow-hidden rounded-2xl border border-hair border-cream-10">
+          <div className="relative mt-14 h-[220px] overflow-hidden rounded-2xl border border-hair border-cream-10 md:h-[380px]">
             {/* TODO: replace with actual event/program photo */}
-            <img
+            <Image
               src={AFTERMATH.eventPhoto}
               alt="AI CEO Circle program session"
-              className="h-[220px] w-full object-cover md:h-[380px]"
+              fill
+              sizes="100vw"
+              className="object-cover"
               style={{ filter: "saturate(0.65) brightness(0.7)" }}
             />
           </div>

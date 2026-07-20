@@ -3,6 +3,25 @@ import Container from "@/components/landing/ui/Container";
 import Reveal from "@/components/landing/ui/Reveal";
 import { FOOTER, META } from "@/components/landing/data";
 
+const footerLinkTargets = {
+  Ecosystem: "#ecosystem",
+  Program: "#program",
+  Voices: "#voices",
+  Updates: "#social",
+  Qualification: "#qualification",
+  FAQ: "#faq",
+  Video: "#video",
+  Apply: "#apply",
+  "MAXY Academy": "#ecosystem",
+  "Digital Training": "#ecosystem",
+  "Agentic AI": "#program",
+  Talent: "#ecosystem",
+  Jakarta: "#apply",
+  Singapore: "#apply",
+  "hello@aiceocircle.com": "mailto:hello@aiceocircle.com",
+  "@aiceocircle": "https://www.instagram.com/aiceocircle/",
+};
+
 const Footer = () => {
   return (
     <footer className="relative z-10 overflow-hidden border-t-[0.5px] border-cream-10 bg-[#060b18]">
@@ -54,7 +73,9 @@ const Footer = () => {
                 {col.links.map((l, j) => (
                   <li key={j}>
                     <a
-                      href="#apply"
+                      href={footerLinkTargets[l] || "#apply"}
+                      target={footerLinkTargets[l]?.startsWith("https://") ? "_blank" : undefined}
+                      rel={footerLinkTargets[l]?.startsWith("https://") ? "noopener noreferrer" : undefined}
                       className="inline-flex min-h-[44px] items-center font-serif text-[16px] text-cream-soft transition-colors hover:text-lava"
                     >
                       {l}
@@ -74,9 +95,9 @@ const Footer = () => {
             © {new Date().getFullYear()} MAXY AI · All rights reserved
           </span>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono uppercase tracking-[0.32em]">
-            <a href="#apply" className="hover:text-cream">Legal Notice</a>
-            <a href="#apply" className="hover:text-cream">Privacy Policy</a>
-            <a href="#apply" className="hover:text-cream">Cookies</a>
+            <a href="/legal" className="hover:text-cream">Legal Notice</a>
+            <a href="/privacy" className="hover:text-cream">Privacy Policy</a>
+            <a href="/cookies" className="hover:text-cream">Cookies</a>
           </div>
         </div>
       </Container>

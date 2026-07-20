@@ -123,7 +123,7 @@ export const landingPageJsonLd = {
         height: openGraphImage.height,
       },
       datePublished: "2026-07-14",
-      dateModified: "2026-07-14",
+      dateModified: "2026-07-20",
       inLanguage: "en",
       speakable: {
         "@type": "SpeakableSpecification",

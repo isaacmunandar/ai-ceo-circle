@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { m, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 import SectionLabel from "@/components/landing/ui/SectionLabel";
@@ -49,7 +50,7 @@ const MentorOrb = ({ initials, photo }) => {
         className="relative grid h-full w-full place-items-center overflow-hidden rounded-full border-hair border-cream-15"
       >
         {photo ? (
-          <img src={photo} alt={initials} className="absolute inset-0 h-full w-full object-cover" />
+          <Image src={photo} alt={initials} fill sizes="144px" className="object-cover" />
         ) : (
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_#ffcb9a,_#ff7a3d_45%,_#9a2b08_82%,_#1c0a02)]" />
         )}
@@ -146,7 +147,7 @@ const Mentor = () => {
                 >
                   <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
                     {member.photo ? (
-                      <img src={member.photo} alt={member.name} className="h-full w-full object-cover" />
+                      <Image src={member.photo} alt={member.name} fill sizes="48px" className="object-cover" />
                     ) : (
                       <div className="grid h-full w-full place-items-center bg-[rgba(201,146,10,0.08)] font-mono text-[12px] tracking-wider text-[#C9920A]">
                         {member.initials}
