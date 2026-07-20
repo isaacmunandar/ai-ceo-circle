@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { m } from "framer-motion";
 import Container from "@/components/landing/ui/Container";
 
@@ -104,12 +105,13 @@ const Ecosystem = () => {
 
         {/* Editorial photo — MAXY AI ecosystem in action; replace with real image */}
         <Reveal delay={0.2} className="mt-10">
-          <div className="relative overflow-hidden rounded-2xl border border-white/[0.06]">
-            <img
+          <div className="relative h-[260px] overflow-hidden rounded-2xl border border-white/[0.06] md:h-[360px]">
+            <Image
               src="/images/fullstack-ai-company.png"
               alt="MAXY AI ecosystem — enterprise AI transformation in action"
-              className="h-[260px] w-full object-cover md:h-[360px]"
-              loading="lazy"
+              fill
+              sizes="100vw"
+              className="object-cover"
               style={{ filter: "saturate(0.55) brightness(0.6)" }}
             />
             <div
