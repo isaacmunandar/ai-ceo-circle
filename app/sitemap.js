@@ -1,12 +1,18 @@
 import { SITE_URL } from "@/components/landing/seo";
 
 export default function sitemap() {
-  return [
-    {
-      url: SITE_URL,
-      lastModified: new Date("2026-07-14"),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
+  const lastModified = new Date("2026-07-15");
+  const pages = [
+    { path: "", priority: 1 },
+    { path: "/privacy", priority: 0.3 },
+    { path: "/legal", priority: 0.3 },
+    { path: "/cookies", priority: 0.3 },
   ];
+
+  return pages.map((page) => ({
+    url: `${SITE_URL}${page.path}`,
+    lastModified,
+    changeFrequency: "monthly",
+    priority: page.priority,
+  }));
 }
