@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AnimatePresence, m } from "framer-motion";
+import { m } from "framer-motion";
 import { Plus } from "lucide-react";
 import Container from "@/components/landing/ui/Container";
 
@@ -14,6 +14,7 @@ const FaqItem = ({ item, isOpen, onToggle, index }) => {
         onClick={onToggle}
         className="flex w-full items-start justify-between gap-6 py-8 px-5 md:px-8 text-left transition-colors"
         aria-expanded={isOpen}
+        aria-controls={`faq-answer-${index}`}
       >
         <div className="flex items-start gap-7">
           <span className="font-mono text-[10px] uppercase tracking-[0.38em] text-cream-dim md:pt-1.5">
@@ -39,21 +40,18 @@ const FaqItem = ({ item, isOpen, onToggle, index }) => {
           <Plus className="h-4 w-4" />
         </m.span>
       </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <m.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden"
-          >
-            <div className="pb-8 pl-[60px] pr-5 text-[15px] leading-relaxed text-cream-soft md:pl-[92px] md:pr-[88px]">
-              {item.a}
-            </div>
-          </m.div>
-        )}
-      </AnimatePresence>
+      <m.div
+        id={`faq-answer-${index}`}
+        initial={false}
+        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="overflow-hidden"
+        aria-hidden={!isOpen}
+      >
+        <div className="pb-8 pl-[60px] pr-5 text-[15px] leading-relaxed text-cream-soft md:pl-[92px] md:pr-[88px]">
+          {item.a}
+        </div>
+      </m.div>
     </div>
   );
 };
