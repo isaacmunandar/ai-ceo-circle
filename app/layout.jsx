@@ -1,6 +1,7 @@
 import './globals.css';
 import { Inter, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import { landingMetadata } from '@/components/landing/seo';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -46,7 +47,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning
       className={`${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>{children}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
+      </body>
     </html>
   );
 }
